@@ -1,0 +1,2039 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26">
+    <Prefix name="" IRI="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26/"/>
+    <Prefix name="CLO" IRI="http://purl.obolibrary.org/obo/clo/clo_merged.owl/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="GSSO" IRI="http://purl.obolibrary.org/obo/gsso.owl/"/>
+    <Prefix name="LABO" IRI="http://purl.obolibrary.org/obo/labo.owl#"/>
+    <Prefix name="MESH" IRI="https://w3id.org/biopragmatics/resources/mesh/mesh.ofn/"/>
+    <Prefix name="NGBO" IRI="http://purl.obolibrary.org/obo/ngbo.owl#"/>
+    <Prefix name="SLSO" IRI="http://purl.obolibrary.org/obo/slso.owl"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="EVORAO" IRI="https://w3id.org/evorao/evorao.owl.ttl/"/>
+    <Prefix name="SNOMED" IRI="http://snomed.info/sct/9000000000002070081231/"/>
+    <Prefix name="schema" IRI="https://schema.org/"/>
+    <Declaration>
+        <Class IRI="http://dbpedia.org/ontology/Country"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://id.nlm.nih.gov/mesh/D001363"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://id.nlm.nih.gov/mesh/D004324"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://schema.org/CreativeWork"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://schema.org/Episode"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://schema.org/Language"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://schema.org/Movie"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://schema.org/Organization"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://schema.org/Person"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://schema.org/Rating"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://schema.org/Review"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://schema.org/TVSeries"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://snomed.info/id/308004006"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://snomed.info/id/308009001"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://snomed.info/id/308010006"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Action"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Actor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Animation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Comedy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Editor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Genre"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Horror"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MusicalArtist"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OnlineRetailer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Rater"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Romance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Subtitle"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Thriller"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Viewer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://w3id.org/evorao/Certification"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0003001"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#actsIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#availableOn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#awardGivenTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#awardedTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#belongsToCountry"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#direct"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#distributedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#distrubutes"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#followedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#followsSeries"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#givenByRater"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#givesRating"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasAward"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasGenre"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasRating"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasReview"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasReviewer"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSubtitle"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSubtitleLanguage"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hosts"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isGenreOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isLikedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isRatingOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isReviewOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#likesMedia"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#ratedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#ratesMedia"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#receivedAward"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#reviewsMedia"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#subtitleOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#watchedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#watches"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#writesReview"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#writtenByViewer"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.w3.org/2006/vcard/ns#hasLanguage"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="schema:actor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="schema:areaServed"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="schema:director"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="schema:hasCertification"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="schema:inLanguage"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="schema:produces"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://schema.org/awards"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://schema.org/bestRating"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://schema.org/birthDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://schema.org/dateCreated"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://schema.org/description"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://schema.org/duration"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://schema.org/email"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://schema.org/episodeNumber"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://schema.org/gender"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://schema.org/givenName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://schema.org/identifier"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://schema.org/jobTitle"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://schema.org/name"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://schema.org/nationality"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://schema.org/numberOfEpisodes"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://schema.org/numberOfSeasons"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://schema.org/ratingValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://schema.org/reviewBody"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://schema.org/seasonNumber"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://schema.org/url"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://schema.org/worstRating"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#awardYear"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#boxOfficeRevenue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#budget"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#memberSince"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#subscriptionPrice"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#subscriptionType"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#subtitleFormat"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ARYZap"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ActionGenre"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AhmedRaza"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AyeshaKhan"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BilalLashari"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BilalLashariEditor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CBFCPakPG"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DramaGenre"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EnglishSubWaar"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HamzaAliAbbasi"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HasanRana"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NasirAdeeb"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NigarAward2014"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Pakistan"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PashtoLang"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Production1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SahirAliBagga"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SaraMalik"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ShaanShahid"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ThrillerGenre"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#UrduLang"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#UsmanTariq"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WaarRating"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WaarReview01"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WaarReview02"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#YouTubePK"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#waar"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="http://id.nlm.nih.gov/mesh/D004324"/>
+        <Class IRI="#Genre"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://schema.org/Movie"/>
+        <Class IRI="http://schema.org/CreativeWork"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://schema.org/TVSeries"/>
+        <Class IRI="http://schema.org/CreativeWork"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://snomed.info/id/308004006"/>
+        <Class IRI="http://schema.org/Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://snomed.info/id/308009001"/>
+        <Class IRI="http://schema.org/Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://snomed.info/id/308010006"/>
+        <Class IRI="http://schema.org/Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Action"/>
+        <Class IRI="#Genre"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Actor"/>
+        <Class IRI="http://schema.org/Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Animation"/>
+        <Class IRI="#Genre"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Comedy"/>
+        <Class IRI="#Genre"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Editor"/>
+        <Class IRI="http://schema.org/Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Horror"/>
+        <Class IRI="#Genre"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MusicalArtist"/>
+        <Class IRI="http://schema.org/Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Rater"/>
+        <Class IRI="http://schema.org/Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Romance"/>
+        <Class IRI="#Genre"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Thriller"/>
+        <Class IRI="#Genre"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Viewer"/>
+        <Class IRI="http://schema.org/Person"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#OnlineRetailer"/>
+        <NamedIndividual IRI="#ARYZap"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Genre"/>
+        <NamedIndividual IRI="#ActionGenre"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Viewer"/>
+        <NamedIndividual IRI="#AhmedRaza"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Actor"/>
+        <NamedIndividual IRI="#AyeshaKhan"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://snomed.info/id/308009001"/>
+        <NamedIndividual IRI="#BilalLashari"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Editor"/>
+        <NamedIndividual IRI="#BilalLashariEditor"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="https://w3id.org/evorao/Certification"/>
+        <NamedIndividual IRI="#CBFCPakPG"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Genre"/>
+        <NamedIndividual IRI="#DramaGenre"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Subtitle"/>
+        <NamedIndividual IRI="#EnglishSubWaar"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Actor"/>
+        <NamedIndividual IRI="#HamzaAliAbbasi"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://snomed.info/id/308010006"/>
+        <NamedIndividual IRI="#HasanRana"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://snomed.info/id/308004006"/>
+        <NamedIndividual IRI="#NasirAdeeb"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://id.nlm.nih.gov/mesh/D001363"/>
+        <NamedIndividual IRI="#NigarAward2014"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://dbpedia.org/ontology/Country"/>
+        <NamedIndividual IRI="#Pakistan"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://schema.org/Language"/>
+        <NamedIndividual IRI="#PashtoLang"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://schema.org/Organization"/>
+        <NamedIndividual IRI="#Production1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MusicalArtist"/>
+        <NamedIndividual IRI="#SahirAliBagga"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Viewer"/>
+        <NamedIndividual IRI="#SaraMalik"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Actor"/>
+        <NamedIndividual IRI="#ShaanShahid"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Genre"/>
+        <NamedIndividual IRI="#ThrillerGenre"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://schema.org/Language"/>
+        <NamedIndividual IRI="#UrduLang"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Rater"/>
+        <NamedIndividual IRI="#UsmanTariq"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://schema.org/Rating"/>
+        <NamedIndividual IRI="#WaarRating"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://schema.org/Review"/>
+        <NamedIndividual IRI="#WaarReview01"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://schema.org/Review"/>
+        <NamedIndividual IRI="#WaarReview02"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#OnlineRetailer"/>
+        <NamedIndividual IRI="#YouTubePK"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://schema.org/Movie"/>
+        <NamedIndividual IRI="#waar"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#distrubutes"/>
+        <NamedIndividual IRI="#ARYZap"/>
+        <NamedIndividual IRI="#waar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hosts"/>
+        <NamedIndividual IRI="#ARYZap"/>
+        <NamedIndividual IRI="#waar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="schema:areaServed"/>
+        <NamedIndividual IRI="#ARYZap"/>
+        <NamedIndividual IRI="#Pakistan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="schema:inLanguage"/>
+        <NamedIndividual IRI="#ARYZap"/>
+        <NamedIndividual IRI="#UrduLang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isGenreOf"/>
+        <NamedIndividual IRI="#ActionGenre"/>
+        <NamedIndividual IRI="#waar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#reviewsMedia"/>
+        <NamedIndividual IRI="#AhmedRaza"/>
+        <NamedIndividual IRI="#waar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#watches"/>
+        <NamedIndividual IRI="#AhmedRaza"/>
+        <NamedIndividual IRI="#waar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#writesReview"/>
+        <NamedIndividual IRI="#AhmedRaza"/>
+        <NamedIndividual IRI="#WaarReview02"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#actsIn"/>
+        <NamedIndividual IRI="#AyeshaKhan"/>
+        <NamedIndividual IRI="#waar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#direct"/>
+        <NamedIndividual IRI="#BilalLashari"/>
+        <NamedIndividual IRI="#waar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#receivedAward"/>
+        <NamedIndividual IRI="#BilalLashari"/>
+        <NamedIndividual IRI="#NigarAward2014"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isGenreOf"/>
+        <NamedIndividual IRI="#DramaGenre"/>
+        <NamedIndividual IRI="#waar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#subtitleOf"/>
+        <NamedIndividual IRI="#EnglishSubWaar"/>
+        <NamedIndividual IRI="#waar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#actsIn"/>
+        <NamedIndividual IRI="#HamzaAliAbbasi"/>
+        <NamedIndividual IRI="#waar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#awardGivenTo"/>
+        <NamedIndividual IRI="#NigarAward2014"/>
+        <NamedIndividual IRI="#BilalLashari"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#awardedTo"/>
+        <NamedIndividual IRI="#NigarAward2014"/>
+        <NamedIndividual IRI="#waar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="schema:produces"/>
+        <NamedIndividual IRI="#Production1"/>
+        <NamedIndividual IRI="#waar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#likesMedia"/>
+        <NamedIndividual IRI="#SaraMalik"/>
+        <NamedIndividual IRI="#waar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#reviewsMedia"/>
+        <NamedIndividual IRI="#SaraMalik"/>
+        <NamedIndividual IRI="#waar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#watches"/>
+        <NamedIndividual IRI="#SaraMalik"/>
+        <NamedIndividual IRI="#waar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#writesReview"/>
+        <NamedIndividual IRI="#SaraMalik"/>
+        <NamedIndividual IRI="#WaarReview01"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#actsIn"/>
+        <NamedIndividual IRI="#ShaanShahid"/>
+        <NamedIndividual IRI="#waar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isGenreOf"/>
+        <NamedIndividual IRI="#ThrillerGenre"/>
+        <NamedIndividual IRI="#waar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#givesRating"/>
+        <NamedIndividual IRI="#UsmanTariq"/>
+        <NamedIndividual IRI="#WaarRating"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ratesMedia"/>
+        <NamedIndividual IRI="#UsmanTariq"/>
+        <NamedIndividual IRI="#waar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#givenByRater"/>
+        <NamedIndividual IRI="#WaarRating"/>
+        <NamedIndividual IRI="#UsmanTariq"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isRatingOf"/>
+        <NamedIndividual IRI="#WaarRating"/>
+        <NamedIndividual IRI="#waar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isReviewOf"/>
+        <NamedIndividual IRI="#WaarReview01"/>
+        <NamedIndividual IRI="#waar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#writtenByViewer"/>
+        <NamedIndividual IRI="#WaarReview01"/>
+        <NamedIndividual IRI="#SaraMalik"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isReviewOf"/>
+        <NamedIndividual IRI="#WaarReview02"/>
+        <NamedIndividual IRI="#waar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#writtenByViewer"/>
+        <NamedIndividual IRI="#WaarReview02"/>
+        <NamedIndividual IRI="#AhmedRaza"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hosts"/>
+        <NamedIndividual IRI="#YouTubePK"/>
+        <NamedIndividual IRI="#waar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0003001"/>
+        <NamedIndividual IRI="#waar"/>
+        <NamedIndividual IRI="#Production1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#availableOn"/>
+        <NamedIndividual IRI="#waar"/>
+        <NamedIndividual IRI="#ARYZap"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#availableOn"/>
+        <NamedIndividual IRI="#waar"/>
+        <NamedIndividual IRI="#YouTubePK"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToCountry"/>
+        <NamedIndividual IRI="#waar"/>
+        <NamedIndividual IRI="#Pakistan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#distributedBy"/>
+        <NamedIndividual IRI="#waar"/>
+        <NamedIndividual IRI="#ARYZap"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAward"/>
+        <NamedIndividual IRI="#waar"/>
+        <NamedIndividual IRI="#NigarAward2014"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasGenre"/>
+        <NamedIndividual IRI="#waar"/>
+        <NamedIndividual IRI="#ActionGenre"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasGenre"/>
+        <NamedIndividual IRI="#waar"/>
+        <NamedIndividual IRI="#DramaGenre"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasGenre"/>
+        <NamedIndividual IRI="#waar"/>
+        <NamedIndividual IRI="#ThrillerGenre"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasRating"/>
+        <NamedIndividual IRI="#waar"/>
+        <NamedIndividual IRI="#WaarRating"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasReview"/>
+        <NamedIndividual IRI="#waar"/>
+        <NamedIndividual IRI="#WaarReview01"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasReview"/>
+        <NamedIndividual IRI="#waar"/>
+        <NamedIndividual IRI="#WaarReview02"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasReviewer"/>
+        <NamedIndividual IRI="#waar"/>
+        <NamedIndividual IRI="#AhmedRaza"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasReviewer"/>
+        <NamedIndividual IRI="#waar"/>
+        <NamedIndividual IRI="#SaraMalik"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSubtitle"/>
+        <NamedIndividual IRI="#waar"/>
+        <NamedIndividual IRI="#EnglishSubWaar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isLikedBy"/>
+        <NamedIndividual IRI="#waar"/>
+        <NamedIndividual IRI="#SaraMalik"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ratedBy"/>
+        <NamedIndividual IRI="#waar"/>
+        <NamedIndividual IRI="#UsmanTariq"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#watchedBy"/>
+        <NamedIndividual IRI="#waar"/>
+        <NamedIndividual IRI="#AhmedRaza"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#watchedBy"/>
+        <NamedIndividual IRI="#waar"/>
+        <NamedIndividual IRI="#SaraMalik"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.w3.org/2006/vcard/ns#hasLanguage"/>
+        <NamedIndividual IRI="#waar"/>
+        <NamedIndividual IRI="#UrduLang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="schema:actor"/>
+        <NamedIndividual IRI="#waar"/>
+        <NamedIndividual IRI="#AyeshaKhan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="schema:actor"/>
+        <NamedIndividual IRI="#waar"/>
+        <NamedIndividual IRI="#HamzaAliAbbasi"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="schema:actor"/>
+        <NamedIndividual IRI="#waar"/>
+        <NamedIndividual IRI="#ShaanShahid"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="schema:director"/>
+        <NamedIndividual IRI="#waar"/>
+        <NamedIndividual IRI="#BilalLashari"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="schema:hasCertification"/>
+        <NamedIndividual IRI="#waar"/>
+        <NamedIndividual IRI="#CBFCPakPG"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/name"/>
+        <NamedIndividual IRI="#ARYZap"/>
+        <Literal>ARY ZAP</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/url"/>
+        <NamedIndividual IRI="#ARYZap"/>
+        <Literal>https://aryzap.com</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#subscriptionPrice"/>
+        <NamedIndividual IRI="#ARYZap"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">2.99</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#subscriptionType"/>
+        <NamedIndividual IRI="#ARYZap"/>
+        <Literal>Basic</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/name"/>
+        <NamedIndividual IRI="#ActionGenre"/>
+        <Literal>Action</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/givenName"/>
+        <NamedIndividual IRI="#AhmedRaza"/>
+        <Literal>Ahmed Raza</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#memberSince"/>
+        <NamedIndividual IRI="#AhmedRaza"/>
+        <Literal>2020-01-01</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/birthDate"/>
+        <NamedIndividual IRI="#AyeshaKhan"/>
+        <Literal>1988-07-01</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/gender"/>
+        <NamedIndividual IRI="#AyeshaKhan"/>
+        <Literal>Female</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/givenName"/>
+        <NamedIndividual IRI="#AyeshaKhan"/>
+        <Literal>Ayesha Khan</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/nationality"/>
+        <NamedIndividual IRI="#AyeshaKhan"/>
+        <Literal>Pakistani</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/birthDate"/>
+        <NamedIndividual IRI="#BilalLashari"/>
+        <Literal>12-3-1998</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/email"/>
+        <NamedIndividual IRI="#BilalLashari"/>
+        <Literal>bilal@gmail.com</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/gender"/>
+        <NamedIndividual IRI="#BilalLashari"/>
+        <Literal>Male</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/givenName"/>
+        <NamedIndividual IRI="#BilalLashari"/>
+        <Literal>Bilal Lashari</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/nationality"/>
+        <NamedIndividual IRI="#BilalLashari"/>
+        <Literal>Pakistani</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/gender"/>
+        <NamedIndividual IRI="#BilalLashariEditor"/>
+        <Literal>Male</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/givenName"/>
+        <NamedIndividual IRI="#BilalLashariEditor"/>
+        <Literal>Bilal Lashari Editor</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/jobTitle"/>
+        <NamedIndividual IRI="#BilalLashariEditor"/>
+        <Literal>Senior Film Editor</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/identifier"/>
+        <NamedIndividual IRI="#CBFCPakPG"/>
+        <Literal>CR#456</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/name"/>
+        <NamedIndividual IRI="#CBFCPakPG"/>
+        <Literal>CBFC Pakistan — PG</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/name"/>
+        <NamedIndividual IRI="#DramaGenre"/>
+        <Literal>Drama</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/name"/>
+        <NamedIndividual IRI="#EnglishSubWaar"/>
+        <Literal>English Subtile</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#subtitleFormat"/>
+        <NamedIndividual IRI="#EnglishSubWaar"/>
+        <Literal>SRT</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/birthDate"/>
+        <NamedIndividual IRI="#HamzaAliAbbasi"/>
+        <Literal>1984-06-23</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/gender"/>
+        <NamedIndividual IRI="#HamzaAliAbbasi"/>
+        <Literal>Male</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/givenName"/>
+        <NamedIndividual IRI="#HamzaAliAbbasi"/>
+        <Literal>Hamza Ali Abbasi</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/nationality"/>
+        <NamedIndividual IRI="#HamzaAliAbbasi"/>
+        <Literal>Pakistani</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/gender"/>
+        <NamedIndividual IRI="#HasanRana"/>
+        <Literal>Male</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/givenName"/>
+        <NamedIndividual IRI="#HasanRana"/>
+        <Literal>Hasan Rana</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/nationality"/>
+        <NamedIndividual IRI="#HasanRana"/>
+        <Literal>Pakistani</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/birthDate"/>
+        <NamedIndividual IRI="#NasirAdeeb"/>
+        <Literal>1950-01-01</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/gender"/>
+        <NamedIndividual IRI="#NasirAdeeb"/>
+        <Literal>Male</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/givenName"/>
+        <NamedIndividual IRI="#NasirAdeeb"/>
+        <Literal>Nasir Adeeb</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/nationality"/>
+        <NamedIndividual IRI="#NasirAdeeb"/>
+        <Literal>Pakistani</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/identifier"/>
+        <NamedIndividual IRI="#NigarAward2014"/>
+        <Literal>AW#214</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/name"/>
+        <NamedIndividual IRI="#NigarAward2014"/>
+        <Literal>Nigar Award Best Film</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#awardYear"/>
+        <NamedIndividual IRI="#NigarAward2014"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">2014</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/name"/>
+        <NamedIndividual IRI="#Pakistan"/>
+        <Literal>Pakistan</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/name"/>
+        <NamedIndividual IRI="#PashtoLang"/>
+        <Literal>Pashto</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/name"/>
+        <NamedIndividual IRI="#Production1"/>
+        <Literal>MindWorks</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/url"/>
+        <NamedIndividual IRI="#Production1"/>
+        <Literal>https://mindworkproductions.com/</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/gender"/>
+        <NamedIndividual IRI="#SahirAliBagga"/>
+        <Literal>Male</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/givenName"/>
+        <NamedIndividual IRI="#SahirAliBagga"/>
+        <Literal>Sahir Ali Bagga</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/jobTitle"/>
+        <NamedIndividual IRI="#SahirAliBagga"/>
+        <Literal>Film Score Composer</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/givenName"/>
+        <NamedIndividual IRI="#SaraMalik"/>
+        <Literal>Sara Malik</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#memberSince"/>
+        <NamedIndividual IRI="#SaraMalik"/>
+        <Literal>2021-06-15</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/birthDate"/>
+        <NamedIndividual IRI="#ShaanShahid"/>
+        <Literal>1969-09-24</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/gender"/>
+        <NamedIndividual IRI="#ShaanShahid"/>
+        <Literal>Male</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/givenName"/>
+        <NamedIndividual IRI="#ShaanShahid"/>
+        <Literal>Shaan Shahid</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/nationality"/>
+        <NamedIndividual IRI="#ShaanShahid"/>
+        <Literal>Pakistani</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/name"/>
+        <NamedIndividual IRI="#ThrillerGenre"/>
+        <Literal>Thriller</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/name"/>
+        <NamedIndividual IRI="#UrduLang"/>
+        <Literal>Urdu</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/email"/>
+        <NamedIndividual IRI="#UsmanTariq"/>
+        <Literal>Usman@gmail.com</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/gender"/>
+        <NamedIndividual IRI="#UsmanTariq"/>
+        <Literal>Male</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/givenName"/>
+        <NamedIndividual IRI="#UsmanTariq"/>
+        <Literal>Usman Tariq</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#memberSince"/>
+        <NamedIndividual IRI="#UsmanTariq"/>
+        <Literal>2020-01-01</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/bestRating"/>
+        <NamedIndividual IRI="#WaarRating"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">10</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/ratingValue"/>
+        <NamedIndividual IRI="#WaarRating"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">8.2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/worstRating"/>
+        <NamedIndividual IRI="#WaarRating"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/dateCreated"/>
+        <NamedIndividual IRI="#WaarReview01"/>
+        <Literal>2013-11-01</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/reviewBody"/>
+        <NamedIndividual IRI="#WaarReview01"/>
+        <Literal>Groundbreaking action film. Proud moment for Pakistani cinema.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/dateCreated"/>
+        <NamedIndividual IRI="#WaarReview02"/>
+        <Literal>2013-11-15</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/reviewBody"/>
+        <NamedIndividual IRI="#WaarReview02"/>
+        <Literal>Bilal Lashari ne kamaal kar diya. Best Pakistani film ever.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/name"/>
+        <NamedIndividual IRI="#YouTubePK"/>
+        <Literal>YouTube Pakistan</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/url"/>
+        <NamedIndividual IRI="#YouTubePK"/>
+        <Literal>https://youtube.com</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#subscriptionPrice"/>
+        <NamedIndividual IRI="#YouTubePK"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">0.00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#subscriptionType"/>
+        <NamedIndividual IRI="#YouTubePK"/>
+        <Literal>Free</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/awards"/>
+        <NamedIndividual IRI="#waar"/>
+        <Literal>Nigar Award Best Film 2014</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/description"/>
+        <NamedIndividual IRI="#waar"/>
+        <Literal>A Pakistani counter-terrorism action film following Major Mujtaba against terrorist outfit.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/duration"/>
+        <NamedIndividual IRI="#waar"/>
+        <Literal>&quot;PT148M&quot; (148 minutes)</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/identifier"/>
+        <NamedIndividual IRI="#waar"/>
+        <Literal>waar-2013-pk</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://schema.org/name"/>
+        <NamedIndividual IRI="#waar"/>
+        <Literal>Waar</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#boxOfficeRevenue"/>
+        <NamedIndividual IRI="#waar"/>
+        <Literal>240000000 (PKR 24 crore)</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#budget"/>
+        <NamedIndividual IRI="#waar"/>
+        <Literal>150000000 (PKR 15 crore)</Literal>
+    </DataPropertyAssertion>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0003001"/>
+        <ObjectProperty abbreviatedIRI="schema:produces"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#actsIn"/>
+        <ObjectProperty abbreviatedIRI="schema:actor"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#availableOn"/>
+        <ObjectProperty IRI="#hosts"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#awardGivenTo"/>
+        <ObjectProperty IRI="#receivedAward"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#awardedTo"/>
+        <ObjectProperty IRI="#hasAward"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#direct"/>
+        <ObjectProperty abbreviatedIRI="schema:director"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#distributedBy"/>
+        <ObjectProperty IRI="#distrubutes"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#followedBy"/>
+        <ObjectProperty IRI="#followsSeries"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#givenByRater"/>
+        <ObjectProperty IRI="#givesRating"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasGenre"/>
+        <ObjectProperty IRI="#isGenreOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasRating"/>
+        <ObjectProperty IRI="#isRatingOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasReview"/>
+        <ObjectProperty IRI="#isReviewOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasReviewer"/>
+        <ObjectProperty IRI="#reviewsMedia"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasSubtitle"/>
+        <ObjectProperty IRI="#subtitleOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isLikedBy"/>
+        <ObjectProperty IRI="#likesMedia"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#ratedBy"/>
+        <ObjectProperty IRI="#ratesMedia"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#watchedBy"/>
+        <ObjectProperty IRI="#watches"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#writesReview"/>
+        <ObjectProperty IRI="#writtenByViewer"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0003001"/>
+        <Class IRI="http://schema.org/CreativeWork"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#actsIn"/>
+        <Class IRI="#Actor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#availableOn"/>
+        <Class IRI="http://schema.org/CreativeWork"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#awardGivenTo"/>
+        <Class IRI="http://id.nlm.nih.gov/mesh/D001363"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#awardedTo"/>
+        <Class IRI="http://id.nlm.nih.gov/mesh/D001363"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#belongsToCountry"/>
+        <Class IRI="http://schema.org/CreativeWork"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#direct"/>
+        <Class IRI="http://snomed.info/id/308009001"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#distributedBy"/>
+        <Class IRI="http://schema.org/CreativeWork"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#distrubutes"/>
+        <Class IRI="#OnlineRetailer"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#followedBy"/>
+        <Class IRI="http://schema.org/TVSeries"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#followsSeries"/>
+        <Class IRI="#Viewer"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#givenByRater"/>
+        <Class IRI="http://schema.org/Rating"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#givesRating"/>
+        <Class IRI="#Rater"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasAward"/>
+        <Class IRI="http://schema.org/CreativeWork"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasGenre"/>
+        <ObjectUnionOf>
+            <Class IRI="http://id.nlm.nih.gov/mesh/D001363"/>
+            <Class IRI="http://schema.org/CreativeWork"/>
+            <Class IRI="#OnlineRetailer"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasRating"/>
+        <Class IRI="http://schema.org/CreativeWork"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasReview"/>
+        <Class IRI="http://schema.org/CreativeWork"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasReviewer"/>
+        <Class IRI="http://schema.org/CreativeWork"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSubtitle"/>
+        <Class IRI="http://schema.org/CreativeWork"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSubtitleLanguage"/>
+        <Class IRI="#Subtitle"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hosts"/>
+        <Class IRI="#OnlineRetailer"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isGenreOf"/>
+        <Class IRI="#Genre"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isLikedBy"/>
+        <Class IRI="http://schema.org/CreativeWork"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isRatingOf"/>
+        <Class IRI="http://schema.org/Rating"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isReviewOf"/>
+        <Class IRI="http://schema.org/Review"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#likesMedia"/>
+        <Class IRI="#Viewer"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#ratedBy"/>
+        <Class IRI="http://schema.org/CreativeWork"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#ratesMedia"/>
+        <Class IRI="#Rater"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#receivedAward"/>
+        <Class IRI="http://schema.org/Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#reviewsMedia"/>
+        <Class IRI="#Viewer"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#subtitleOf"/>
+        <Class IRI="#Subtitle"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#watchedBy"/>
+        <Class IRI="http://schema.org/CreativeWork"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#watches"/>
+        <Class IRI="#Viewer"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#writesReview"/>
+        <Class IRI="#Viewer"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#writtenByViewer"/>
+        <Class IRI="http://schema.org/Review"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.w3.org/2006/vcard/ns#hasLanguage"/>
+        <Class IRI="http://schema.org/CreativeWork"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="schema:actor"/>
+        <Class IRI="http://schema.org/CreativeWork"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="schema:areaServed"/>
+        <Class IRI="#OnlineRetailer"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="schema:director"/>
+        <Class IRI="http://schema.org/CreativeWork"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="schema:hasCertification"/>
+        <Class IRI="http://schema.org/CreativeWork"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="schema:inLanguage"/>
+        <Class IRI="#OnlineRetailer"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="schema:produces"/>
+        <Class IRI="http://schema.org/Organization"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0003001"/>
+        <Class IRI="http://schema.org/Organization"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#actsIn"/>
+        <Class IRI="http://schema.org/CreativeWork"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#availableOn"/>
+        <Class IRI="#OnlineRetailer"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#awardGivenTo"/>
+        <Class IRI="http://schema.org/Person"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#awardedTo"/>
+        <Class IRI="http://schema.org/CreativeWork"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#belongsToCountry"/>
+        <Class IRI="http://dbpedia.org/ontology/Country"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#direct"/>
+        <Class IRI="http://schema.org/CreativeWork"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#distributedBy"/>
+        <Class IRI="#OnlineRetailer"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#distrubutes"/>
+        <Class IRI="http://schema.org/CreativeWork"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#followedBy"/>
+        <Class IRI="#Viewer"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#followsSeries"/>
+        <Class IRI="http://schema.org/TVSeries"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#givenByRater"/>
+        <Class IRI="#Rater"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#givesRating"/>
+        <Class IRI="http://schema.org/Rating"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasAward"/>
+        <Class IRI="http://id.nlm.nih.gov/mesh/D001363"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasGenre"/>
+        <Class IRI="#Genre"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasRating"/>
+        <Class IRI="http://schema.org/Rating"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasReview"/>
+        <Class IRI="http://schema.org/Review"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasReviewer"/>
+        <Class IRI="#Viewer"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSubtitle"/>
+        <Class IRI="#Subtitle"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSubtitleLanguage"/>
+        <Class IRI="http://schema.org/Language"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hosts"/>
+        <Class IRI="http://schema.org/CreativeWork"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isGenreOf"/>
+        <Class IRI="http://schema.org/CreativeWork"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isLikedBy"/>
+        <Class IRI="#Viewer"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isRatingOf"/>
+        <Class IRI="http://schema.org/CreativeWork"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isReviewOf"/>
+        <Class IRI="http://schema.org/CreativeWork"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#likesMedia"/>
+        <Class IRI="http://schema.org/CreativeWork"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#ratedBy"/>
+        <Class IRI="#Rater"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#ratesMedia"/>
+        <Class IRI="http://schema.org/CreativeWork"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#receivedAward"/>
+        <Class IRI="http://id.nlm.nih.gov/mesh/D001363"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#reviewsMedia"/>
+        <Class IRI="http://schema.org/CreativeWork"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#subtitleOf"/>
+        <Class IRI="http://schema.org/CreativeWork"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#watchedBy"/>
+        <Class IRI="#Viewer"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#watches"/>
+        <Class IRI="http://schema.org/CreativeWork"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#writesReview"/>
+        <Class IRI="http://schema.org/Review"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#writtenByViewer"/>
+        <Class IRI="#Viewer"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.w3.org/2006/vcard/ns#hasLanguage"/>
+        <Class IRI="http://schema.org/Language"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="schema:actor"/>
+        <Class IRI="#Actor"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="schema:areaServed"/>
+        <Class IRI="http://dbpedia.org/ontology/Country"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="schema:director"/>
+        <Class IRI="http://snomed.info/id/308009001"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="schema:hasCertification"/>
+        <Class IRI="https://w3id.org/evorao/Certification"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="schema:inLanguage"/>
+        <Class IRI="http://schema.org/Language"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="schema:produces"/>
+        <Class IRI="http://schema.org/CreativeWork"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://schema.org/awards"/>
+        <ObjectUnionOf>
+            <Class IRI="http://schema.org/Movie"/>
+            <Class IRI="http://snomed.info/id/308009001"/>
+            <Class IRI="#Actor"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://schema.org/bestRating"/>
+        <Class IRI="http://schema.org/Rating"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://schema.org/birthDate"/>
+        <ObjectUnionOf>
+            <Class IRI="http://snomed.info/id/308004006"/>
+            <Class IRI="http://snomed.info/id/308009001"/>
+            <Class IRI="#Actor"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://schema.org/dateCreated"/>
+        <Class IRI="http://schema.org/Review"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://schema.org/description"/>
+        <Class IRI="http://schema.org/CreativeWork"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://schema.org/duration"/>
+        <ObjectUnionOf>
+            <Class IRI="http://schema.org/CreativeWork"/>
+            <Class IRI="http://schema.org/Episode"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://schema.org/email"/>
+        <ObjectUnionOf>
+            <Class IRI="#Rater"/>
+            <Class IRI="#Viewer"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://schema.org/episodeNumber"/>
+        <Class IRI="http://schema.org/Episode"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://schema.org/gender"/>
+        <Class IRI="http://schema.org/Person"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://schema.org/givenName"/>
+        <ObjectUnionOf>
+            <Class IRI="http://snomed.info/id/308004006"/>
+            <Class IRI="http://snomed.info/id/308009001"/>
+            <Class IRI="http://snomed.info/id/308010006"/>
+            <Class IRI="#Actor"/>
+            <Class IRI="#Editor"/>
+            <Class IRI="#MusicalArtist"/>
+            <Class IRI="#Rater"/>
+            <Class IRI="#Viewer"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://schema.org/identifier"/>
+        <ObjectUnionOf>
+            <Class IRI="http://id.nlm.nih.gov/mesh/D001363"/>
+            <Class IRI="http://schema.org/CreativeWork"/>
+            <Class IRI="https://w3id.org/evorao/Certification"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://schema.org/jobTitle"/>
+        <ObjectUnionOf>
+            <Class IRI="#Editor"/>
+            <Class IRI="#MusicalArtist"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://schema.org/name"/>
+        <ObjectUnionOf>
+            <Class IRI="http://dbpedia.org/ontology/Country"/>
+            <Class IRI="http://id.nlm.nih.gov/mesh/D001363"/>
+            <Class IRI="http://schema.org/CreativeWork"/>
+            <Class IRI="http://schema.org/Episode"/>
+            <Class IRI="http://schema.org/Language"/>
+            <Class IRI="http://schema.org/Organization"/>
+            <Class IRI="#Genre"/>
+            <Class IRI="#OnlineRetailer"/>
+            <Class IRI="#Subtitle"/>
+            <Class IRI="https://w3id.org/evorao/Certification"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://schema.org/nationality"/>
+        <ObjectUnionOf>
+            <Class IRI="http://snomed.info/id/308004006"/>
+            <Class IRI="http://snomed.info/id/308009001"/>
+            <Class IRI="http://snomed.info/id/308010006"/>
+            <Class IRI="#Actor"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://schema.org/numberOfEpisodes"/>
+        <Class IRI="http://schema.org/TVSeries"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://schema.org/numberOfSeasons"/>
+        <Class IRI="http://schema.org/TVSeries"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://schema.org/ratingValue"/>
+        <Class IRI="http://schema.org/Rating"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://schema.org/reviewBody"/>
+        <Class IRI="http://schema.org/Review"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://schema.org/seasonNumber"/>
+        <Class IRI="http://schema.org/Episode"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://schema.org/url"/>
+        <ObjectUnionOf>
+            <Class IRI="http://schema.org/Organization"/>
+            <Class IRI="#OnlineRetailer"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://schema.org/worstRating"/>
+        <Class IRI="http://schema.org/Rating"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#awardYear"/>
+        <Class IRI="http://id.nlm.nih.gov/mesh/D001363"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#boxOfficeRevenue"/>
+        <Class IRI="http://schema.org/Movie"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#budget"/>
+        <Class IRI="http://schema.org/Movie"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#memberSince"/>
+        <ObjectUnionOf>
+            <Class IRI="#Rater"/>
+            <Class IRI="#Viewer"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#subscriptionPrice"/>
+        <Class IRI="#OnlineRetailer"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#subscriptionType"/>
+        <Class IRI="#OnlineRetailer"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#subtitleFormat"/>
+        <Class IRI="#Subtitle"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="http://schema.org/awards"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://schema.org/bestRating"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://schema.org/birthDate"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://schema.org/dateCreated"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://schema.org/description"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://schema.org/duration"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://schema.org/email"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://schema.org/episodeNumber"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://schema.org/gender"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://schema.org/givenName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://schema.org/identifier"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://schema.org/jobTitle"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://schema.org/name"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://schema.org/nationality"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://schema.org/numberOfEpisodes"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://schema.org/numberOfSeasons"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://schema.org/ratingValue"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://schema.org/reviewBody"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://schema.org/seasonNumber"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://schema.org/url"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://schema.org/worstRating"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#awardYear"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#boxOfficeRevenue"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#budget"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#memberSince"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#subscriptionPrice"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#subscriptionType"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#subtitleFormat"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://dbpedia.org/ontology/Country</IRI>
+        <Literal>Country</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://id.nlm.nih.gov/mesh/D001363</IRI>
+        <Literal>Award</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://id.nlm.nih.gov/mesh/D004324</IRI>
+        <Literal>Drama</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://purl.obolibrary.org/obo/RO_0003001</IRI>
+        <Literal>producedByCompany</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://schema.org/CreativeWork</IRI>
+        <Literal>Media</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://schema.org/Episode</IRI>
+        <Literal>Episode</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://schema.org/Language</IRI>
+        <Literal>Language</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://schema.org/Movie</IRI>
+        <Literal>Movie</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://schema.org/Organization</IRI>
+        <Literal>ProductionCompany</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://schema.org/Person</IRI>
+        <Literal>Person</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://schema.org/Rating</IRI>
+        <Literal>Rating</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://schema.org/Review</IRI>
+        <Literal>Review</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://schema.org/TVSeries</IRI>
+        <Literal>TVSeries</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://snomed.info/id/308004006</IRI>
+        <Literal>Writer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://snomed.info/id/308009001</IRI>
+        <Literal>Director</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://snomed.info/id/308010006</IRI>
+        <Literal>Producer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#distrubutes</IRI>
+        <Literal>distributes</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>schema:actor</AbbreviatedIRI>
+        <Literal>hasActor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>schema:areaServed</AbbreviatedIRI>
+        <Literal>availableInCountry</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>schema:director</AbbreviatedIRI>
+        <Literal>directedBy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>schema:inLanguage</AbbreviatedIRI>
+        <Literal>offersLanguage</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
