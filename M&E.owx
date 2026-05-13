@@ -21,6 +21,19 @@
     <Prefix name="EVORAO" IRI="https://w3id.org/evorao/evorao.owl.ttl/"/>
     <Prefix name="SNOMED" IRI="http://snomed.info/sct/9000000000002070081231/"/>
     <Prefix name="schema" IRI="https://schema.org/"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal>This ontology models the movie and entertainment domain,
+including media content, genres, cast and crew members,
+ratings, reviews, awards, subtitles, languages,
+production companies, countries, and online streaming platforms.
+The ontology supports structured representation,
+search, and recommendation of entertainment content.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <Literal>Movie and Entertainment Management Ontology</Literal>
+    </Annotation>
     <Declaration>
         <Class IRI="http://dbpedia.org/ontology/Country"/>
     </Declaration>
@@ -100,10 +113,16 @@
         <Class IRI="#Romance"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#StreamingPlatform"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Subtitle"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Thriller"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VideoHostingService"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Viewer"/>
@@ -113,6 +132,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0003001"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://schema.org/produces"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#actsIn"/>
@@ -128,6 +150,12 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#belongsToCountry"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#certificationOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#composedMusicFor"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#direct"/>
@@ -157,6 +185,9 @@
         <ObjectProperty IRI="#hasGenre"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasMusicBy"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasRating"/>
     </Declaration>
     <Declaration>
@@ -164,6 +195,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasReviewer"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasScreenplayBy"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasSubtitle"/>
@@ -175,7 +209,16 @@
         <ObjectProperty IRI="#hosts"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#isCountryOf"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#isGenreOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isLanguageOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isLanguageOfSubtitle"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isLikedBy"/>
@@ -217,6 +260,9 @@
         <ObjectProperty IRI="#writtenByViewer"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#wroteScreenplayFor"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="http://www.w3.org/2006/vcard/ns#hasLanguage"/>
     </Declaration>
     <Declaration>
@@ -233,9 +279,6 @@
     </Declaration>
     <Declaration>
         <ObjectProperty abbreviatedIRI="schema:inLanguage"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="schema:produces"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="http://schema.org/awards"/>
@@ -269,9 +312,6 @@
     </Declaration>
     <Declaration>
         <DataProperty IRI="http://schema.org/identifier"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="http://schema.org/jobTitle"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="http://schema.org/name"/>
@@ -325,9 +365,6 @@
         <NamedIndividual IRI="#ARYZap"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#ActionGenre"/>
-    </Declaration>
-    <Declaration>
         <NamedIndividual IRI="#AhmedRaza"/>
     </Declaration>
     <Declaration>
@@ -337,13 +374,10 @@
         <NamedIndividual IRI="#BilalLashari"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#BilalLashariEditor"/>
-    </Declaration>
-    <Declaration>
         <NamedIndividual IRI="#CBFCPakPG"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#DramaGenre"/>
+        <NamedIndividual IRI="#EnglishLang"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#EnglishSubWaar"/>
@@ -379,9 +413,6 @@
         <NamedIndividual IRI="#ShaanShahid"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#ThrillerGenre"/>
-    </Declaration>
-    <Declaration>
         <NamedIndividual IRI="#UrduLang"/>
     </Declaration>
     <Declaration>
@@ -403,12 +434,187 @@
         <NamedIndividual IRI="#waar"/>
     </Declaration>
     <SubClassOf>
+        <Class IRI="http://dbpedia.org/ontology/Country"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="http://schema.org/name"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://id.nlm.nih.gov/mesh/D001363"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="http://schema.org/identifier"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://id.nlm.nih.gov/mesh/D001363"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="http://schema.org/name"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://id.nlm.nih.gov/mesh/D001363"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#awardYear"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="http://id.nlm.nih.gov/mesh/D004324"/>
         <Class IRI="#Genre"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="http://schema.org/Movie"/>
         <Class IRI="http://schema.org/CreativeWork"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://schema.org/Movie"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#hasGenre"/>
+            <Class IRI="#Genre"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://schema.org/Movie"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#hasReview"/>
+            <Class IRI="http://schema.org/Review"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://schema.org/Movie"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#belongsToCountry"/>
+            <Class IRI="http://dbpedia.org/ontology/Country"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://schema.org/Movie"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#hasRating"/>
+            <Class IRI="http://schema.org/Rating"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://schema.org/Movie"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="http://schema.org/description"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://schema.org/Movie"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="http://schema.org/duration"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://schema.org/Movie"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="http://schema.org/identifier"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://schema.org/Movie"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="http://schema.org/name"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://schema.org/Movie"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#boxOfficeRevenue"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://schema.org/Movie"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#budget"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://schema.org/Movie"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty IRI="http://schema.org/awards"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://schema.org/Organization"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="http://schema.org/name"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://schema.org/Organization"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="http://schema.org/url"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://schema.org/Rating"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#givenByRater"/>
+            <Class IRI="#Rater"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://schema.org/Rating"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="http://schema.org/bestRating"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://schema.org/Rating"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="http://schema.org/ratingValue"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://schema.org/Rating"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="http://schema.org/worstRating"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://schema.org/Review"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#isReviewOf"/>
+            <Class IRI="http://schema.org/CreativeWork"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://schema.org/Review"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#writtenByViewer"/>
+            <Class IRI="#Viewer"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://schema.org/Review"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="http://schema.org/dateCreated"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://schema.org/Review"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="http://schema.org/reviewBody"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataExactCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="http://schema.org/TVSeries"/>
@@ -419,12 +625,117 @@
         <Class IRI="http://schema.org/Person"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="http://snomed.info/id/308004006"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#wroteScreenplayFor"/>
+            <Class IRI="http://schema.org/CreativeWork"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://snomed.info/id/308004006"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="http://schema.org/gender"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://snomed.info/id/308004006"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="http://schema.org/givenName"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://snomed.info/id/308004006"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="http://schema.org/nationality"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://snomed.info/id/308004006"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty IRI="http://schema.org/birthDate"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="http://snomed.info/id/308009001"/>
         <Class IRI="http://schema.org/Person"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="http://snomed.info/id/308009001"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#direct"/>
+            <Class IRI="http://schema.org/CreativeWork"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://snomed.info/id/308009001"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="http://schema.org/gender"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://snomed.info/id/308009001"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="http://schema.org/givenName"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://snomed.info/id/308009001"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="http://schema.org/nationality"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://snomed.info/id/308009001"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty IRI="http://schema.org/birthDate"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://snomed.info/id/308009001"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty IRI="http://schema.org/email"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="http://snomed.info/id/308010006"/>
         <Class IRI="http://schema.org/Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://snomed.info/id/308010006"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="http://schema.org/produces"/>
+            <Class IRI="http://schema.org/CreativeWork"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://snomed.info/id/308010006"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="http://schema.org/gender"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://snomed.info/id/308010006"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="http://schema.org/givenName"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://snomed.info/id/308010006"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="http://schema.org/nationality"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataExactCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Action"/>
@@ -433,6 +744,41 @@
     <SubClassOf>
         <Class IRI="#Actor"/>
         <Class IRI="http://schema.org/Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Actor"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#actsIn"/>
+            <Class IRI="http://schema.org/CreativeWork"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Actor"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="http://schema.org/gender"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Actor"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="http://schema.org/givenName"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Actor"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="http://schema.org/nationality"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Actor"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty IRI="http://schema.org/birthDate"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataMaxCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Animation"/>
@@ -455,28 +801,384 @@
         <Class IRI="http://schema.org/Person"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#MusicalArtist"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#composedMusicFor"/>
+            <Class IRI="http://schema.org/CreativeWork"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MusicalArtist"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="http://schema.org/gender"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MusicalArtist"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="http://schema.org/givenName"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OnlineRetailer"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#distrubutes"/>
+            <Class IRI="http://schema.org/CreativeWork"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OnlineRetailer"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#hosts"/>
+            <Class IRI="http://schema.org/CreativeWork"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OnlineRetailer"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="http://schema.org/name"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OnlineRetailer"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="http://schema.org/url"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OnlineRetailer"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#subscriptionPrice"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OnlineRetailer"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#subscriptionType"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Rater"/>
         <Class IRI="http://schema.org/Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Rater"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#givesRating"/>
+            <Class IRI="http://schema.org/Rating"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Rater"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#ratesMedia"/>
+            <Class IRI="http://schema.org/CreativeWork"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Rater"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="http://schema.org/gender"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Rater"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="http://schema.org/givenName"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Rater"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#memberSince"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Rater"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty IRI="http://schema.org/email"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataMaxCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Romance"/>
         <Class IRI="#Genre"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#StreamingPlatform"/>
+        <Class IRI="#OnlineRetailer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Subtitle"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasSubtitleLanguage"/>
+            <Class IRI="http://schema.org/Language"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Subtitle"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="http://schema.org/name"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Subtitle"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#subtitleFormat"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Thriller"/>
         <Class IRI="#Genre"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VideoHostingService"/>
+        <Class IRI="#OnlineRetailer"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Viewer"/>
         <Class IRI="http://schema.org/Person"/>
     </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Viewer"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#likesMedia"/>
+            <Class IRI="http://schema.org/CreativeWork"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Viewer"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#watches"/>
+            <Class IRI="http://schema.org/CreativeWork"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Viewer"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#writesReview"/>
+            <Class IRI="http://schema.org/Review"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Viewer"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="http://schema.org/gender"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Viewer"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="http://schema.org/givenName"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Viewer"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#memberSince"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Viewer"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty IRI="http://schema.org/email"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="http://id.nlm.nih.gov/mesh/D004324"/>
+        <ObjectUnionOf>
+            <Class IRI="#Action"/>
+            <Class IRI="#Animation"/>
+            <Class IRI="#Comedy"/>
+            <Class IRI="#Horror"/>
+            <Class IRI="#Romance"/>
+            <Class IRI="#Thriller"/>
+        </ObjectUnionOf>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://schema.org/Movie"/>
+        <Class IRI="http://schema.org/TVSeries"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://snomed.info/id/308004006"/>
+        <ObjectUnionOf>
+            <Class IRI="http://snomed.info/id/308009001"/>
+            <Class IRI="http://snomed.info/id/308010006"/>
+            <Class IRI="#Actor"/>
+            <Class IRI="#Editor"/>
+            <Class IRI="#MusicalArtist"/>
+            <Class IRI="#Rater"/>
+            <Class IRI="#Viewer"/>
+        </ObjectUnionOf>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://snomed.info/id/308009001"/>
+        <ObjectUnionOf>
+            <Class IRI="http://snomed.info/id/308004006"/>
+            <Class IRI="http://snomed.info/id/308010006"/>
+            <Class IRI="#Actor"/>
+            <Class IRI="#Editor"/>
+            <Class IRI="#MusicalArtist"/>
+            <Class IRI="#Rater"/>
+            <Class IRI="#Viewer"/>
+        </ObjectUnionOf>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://snomed.info/id/308010006"/>
+        <ObjectUnionOf>
+            <Class IRI="http://snomed.info/id/308004006"/>
+            <Class IRI="http://snomed.info/id/308009001"/>
+            <Class IRI="#Actor"/>
+            <Class IRI="#Editor"/>
+            <Class IRI="#MusicalArtist"/>
+            <Class IRI="#Rater"/>
+            <Class IRI="#Viewer"/>
+        </ObjectUnionOf>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Action"/>
+        <ObjectUnionOf>
+            <Class IRI="http://id.nlm.nih.gov/mesh/D004324"/>
+            <Class IRI="#Animation"/>
+            <Class IRI="#Comedy"/>
+            <Class IRI="#Horror"/>
+            <Class IRI="#Romance"/>
+            <Class IRI="#Thriller"/>
+        </ObjectUnionOf>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Actor"/>
+        <ObjectUnionOf>
+            <Class IRI="http://snomed.info/id/308004006"/>
+            <Class IRI="http://snomed.info/id/308009001"/>
+            <Class IRI="http://snomed.info/id/308010006"/>
+            <Class IRI="#Editor"/>
+            <Class IRI="#MusicalArtist"/>
+            <Class IRI="#Rater"/>
+            <Class IRI="#Viewer"/>
+        </ObjectUnionOf>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Animation"/>
+        <ObjectUnionOf>
+            <Class IRI="http://id.nlm.nih.gov/mesh/D004324"/>
+            <Class IRI="#Action"/>
+            <Class IRI="#Comedy"/>
+            <Class IRI="#Horror"/>
+            <Class IRI="#Romance"/>
+            <Class IRI="#Thriller"/>
+        </ObjectUnionOf>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Comedy"/>
+        <ObjectUnionOf>
+            <Class IRI="http://id.nlm.nih.gov/mesh/D004324"/>
+            <Class IRI="#Action"/>
+            <Class IRI="#Animation"/>
+            <Class IRI="#Horror"/>
+            <Class IRI="#Romance"/>
+            <Class IRI="#Thriller"/>
+        </ObjectUnionOf>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Editor"/>
+        <ObjectUnionOf>
+            <Class IRI="http://snomed.info/id/308004006"/>
+            <Class IRI="http://snomed.info/id/308009001"/>
+            <Class IRI="http://snomed.info/id/308010006"/>
+            <Class IRI="#Actor"/>
+            <Class IRI="#MusicalArtist"/>
+            <Class IRI="#Rater"/>
+            <Class IRI="#Viewer"/>
+        </ObjectUnionOf>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Horror"/>
+        <ObjectUnionOf>
+            <Class IRI="http://id.nlm.nih.gov/mesh/D004324"/>
+            <Class IRI="#Action"/>
+            <Class IRI="#Animation"/>
+            <Class IRI="#Comedy"/>
+            <Class IRI="#Romance"/>
+            <Class IRI="#Thriller"/>
+        </ObjectUnionOf>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#MusicalArtist"/>
+        <ObjectUnionOf>
+            <Class IRI="http://snomed.info/id/308004006"/>
+            <Class IRI="http://snomed.info/id/308009001"/>
+            <Class IRI="http://snomed.info/id/308010006"/>
+            <Class IRI="#Actor"/>
+            <Class IRI="#Editor"/>
+            <Class IRI="#Rater"/>
+            <Class IRI="#Viewer"/>
+        </ObjectUnionOf>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Rater"/>
+        <ObjectUnionOf>
+            <Class IRI="http://snomed.info/id/308004006"/>
+            <Class IRI="http://snomed.info/id/308009001"/>
+            <Class IRI="http://snomed.info/id/308010006"/>
+            <Class IRI="#Actor"/>
+            <Class IRI="#Editor"/>
+            <Class IRI="#MusicalArtist"/>
+            <Class IRI="#Viewer"/>
+        </ObjectUnionOf>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Romance"/>
+        <ObjectUnionOf>
+            <Class IRI="http://id.nlm.nih.gov/mesh/D004324"/>
+            <Class IRI="#Action"/>
+            <Class IRI="#Animation"/>
+            <Class IRI="#Comedy"/>
+            <Class IRI="#Horror"/>
+            <Class IRI="#Thriller"/>
+        </ObjectUnionOf>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Thriller"/>
+        <ObjectUnionOf>
+            <Class IRI="http://id.nlm.nih.gov/mesh/D004324"/>
+            <Class IRI="#Action"/>
+            <Class IRI="#Animation"/>
+            <Class IRI="#Comedy"/>
+            <Class IRI="#Horror"/>
+            <Class IRI="#Romance"/>
+        </ObjectUnionOf>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Viewer"/>
+        <ObjectUnionOf>
+            <Class IRI="http://snomed.info/id/308004006"/>
+            <Class IRI="http://snomed.info/id/308009001"/>
+            <Class IRI="http://snomed.info/id/308010006"/>
+            <Class IRI="#Actor"/>
+            <Class IRI="#Editor"/>
+            <Class IRI="#MusicalArtist"/>
+            <Class IRI="#Rater"/>
+        </ObjectUnionOf>
+    </DisjointClasses>
     <ClassAssertion>
         <Class IRI="#OnlineRetailer"/>
         <NamedIndividual IRI="#ARYZap"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Genre"/>
-        <NamedIndividual IRI="#ActionGenre"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Viewer"/>
@@ -491,16 +1193,12 @@
         <NamedIndividual IRI="#BilalLashari"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Editor"/>
-        <NamedIndividual IRI="#BilalLashariEditor"/>
-    </ClassAssertion>
-    <ClassAssertion>
         <Class IRI="https://w3id.org/evorao/Certification"/>
         <NamedIndividual IRI="#CBFCPakPG"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Genre"/>
-        <NamedIndividual IRI="#DramaGenre"/>
+        <Class IRI="http://schema.org/Language"/>
+        <NamedIndividual IRI="#EnglishLang"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Subtitle"/>
@@ -545,10 +1243,6 @@
     <ClassAssertion>
         <Class IRI="#Actor"/>
         <NamedIndividual IRI="#ShaanShahid"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Genre"/>
-        <NamedIndividual IRI="#ThrillerGenre"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="http://schema.org/Language"/>
@@ -599,11 +1293,6 @@
         <NamedIndividual IRI="#UrduLang"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#isGenreOf"/>
-        <NamedIndividual IRI="#ActionGenre"/>
-        <NamedIndividual IRI="#waar"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#reviewsMedia"/>
         <NamedIndividual IRI="#AhmedRaza"/>
         <NamedIndividual IRI="#waar"/>
@@ -634,9 +1323,9 @@
         <NamedIndividual IRI="#NigarAward2014"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#isGenreOf"/>
-        <NamedIndividual IRI="#DramaGenre"/>
-        <NamedIndividual IRI="#waar"/>
+        <ObjectProperty IRI="#hasSubtitleLanguage"/>
+        <NamedIndividual IRI="#EnglishSubWaar"/>
+        <NamedIndividual IRI="#EnglishLang"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#subtitleOf"/>
@@ -646,6 +1335,11 @@
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#actsIn"/>
         <NamedIndividual IRI="#HamzaAliAbbasi"/>
+        <NamedIndividual IRI="#waar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#wroteScreenplayFor"/>
+        <NamedIndividual IRI="#NasirAdeeb"/>
         <NamedIndividual IRI="#waar"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
@@ -659,8 +1353,8 @@
         <NamedIndividual IRI="#waar"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty abbreviatedIRI="schema:produces"/>
-        <NamedIndividual IRI="#Production1"/>
+        <ObjectProperty IRI="#composedMusicFor"/>
+        <NamedIndividual IRI="#SahirAliBagga"/>
         <NamedIndividual IRI="#waar"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
@@ -686,11 +1380,6 @@
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#actsIn"/>
         <NamedIndividual IRI="#ShaanShahid"/>
-        <NamedIndividual IRI="#waar"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#isGenreOf"/>
-        <NamedIndividual IRI="#ThrillerGenre"/>
         <NamedIndividual IRI="#waar"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
@@ -767,21 +1456,6 @@
         <ObjectProperty IRI="#hasAward"/>
         <NamedIndividual IRI="#waar"/>
         <NamedIndividual IRI="#NigarAward2014"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasGenre"/>
-        <NamedIndividual IRI="#waar"/>
-        <NamedIndividual IRI="#ActionGenre"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasGenre"/>
-        <NamedIndividual IRI="#waar"/>
-        <NamedIndividual IRI="#DramaGenre"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasGenre"/>
-        <NamedIndividual IRI="#waar"/>
-        <NamedIndividual IRI="#ThrillerGenre"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasRating"/>
@@ -863,6 +1537,16 @@
         <NamedIndividual IRI="#waar"/>
         <NamedIndividual IRI="#CBFCPakPG"/>
     </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="schema:inLanguage"/>
+        <NamedIndividual IRI="#waar"/>
+        <NamedIndividual IRI="#PashtoLang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="schema:inLanguage"/>
+        <NamedIndividual IRI="#waar"/>
+        <NamedIndividual IRI="#UrduLang"/>
+    </ObjectPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="http://schema.org/name"/>
         <NamedIndividual IRI="#ARYZap"/>
@@ -882,11 +1566,6 @@
         <DataProperty IRI="#subscriptionType"/>
         <NamedIndividual IRI="#ARYZap"/>
         <Literal>Basic</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="http://schema.org/name"/>
-        <NamedIndividual IRI="#ActionGenre"/>
-        <Literal>Action</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="http://schema.org/givenName"/>
@@ -944,21 +1623,6 @@
         <Literal>Pakistani</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
-        <DataProperty IRI="http://schema.org/gender"/>
-        <NamedIndividual IRI="#BilalLashariEditor"/>
-        <Literal>Male</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="http://schema.org/givenName"/>
-        <NamedIndividual IRI="#BilalLashariEditor"/>
-        <Literal>Bilal Lashari Editor</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="http://schema.org/jobTitle"/>
-        <NamedIndividual IRI="#BilalLashariEditor"/>
-        <Literal>Senior Film Editor</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
         <DataProperty IRI="http://schema.org/identifier"/>
         <NamedIndividual IRI="#CBFCPakPG"/>
         <Literal>CR#456</Literal>
@@ -970,8 +1634,8 @@
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="http://schema.org/name"/>
-        <NamedIndividual IRI="#DramaGenre"/>
-        <Literal>Drama</Literal>
+        <NamedIndividual IRI="#EnglishLang"/>
+        <Literal>English</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="http://schema.org/name"/>
@@ -1084,11 +1748,6 @@
         <Literal>Sahir Ali Bagga</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
-        <DataProperty IRI="http://schema.org/jobTitle"/>
-        <NamedIndividual IRI="#SahirAliBagga"/>
-        <Literal>Film Score Composer</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
         <DataProperty IRI="http://schema.org/givenName"/>
         <NamedIndividual IRI="#SaraMalik"/>
         <Literal>Sara Malik</Literal>
@@ -1117,11 +1776,6 @@
         <DataProperty IRI="http://schema.org/nationality"/>
         <NamedIndividual IRI="#ShaanShahid"/>
         <Literal>Pakistani</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="http://schema.org/name"/>
-        <NamedIndividual IRI="#ThrillerGenre"/>
-        <Literal>Thriller</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="http://schema.org/name"/>
@@ -1240,7 +1894,7 @@
     </DataPropertyAssertion>
     <InverseObjectProperties>
         <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0003001"/>
-        <ObjectProperty abbreviatedIRI="schema:produces"/>
+        <ObjectProperty IRI="http://schema.org/produces"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#actsIn"/>
@@ -1257,6 +1911,18 @@
     <InverseObjectProperties>
         <ObjectProperty IRI="#awardedTo"/>
         <ObjectProperty IRI="#hasAward"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#belongsToCountry"/>
+        <ObjectProperty IRI="#isCountryOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#certificationOf"/>
+        <ObjectProperty abbreviatedIRI="schema:hasCertification"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#composedMusicFor"/>
+        <ObjectProperty IRI="#hasMusicBy"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#direct"/>
@@ -1291,8 +1957,20 @@
         <ObjectProperty IRI="#reviewsMedia"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#hasScreenplayBy"/>
+        <ObjectProperty IRI="#wroteScreenplayFor"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#hasSubtitle"/>
         <ObjectProperty IRI="#subtitleOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasSubtitleLanguage"/>
+        <ObjectProperty IRI="#isLanguageOfSubtitle"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isLanguageOf"/>
+        <ObjectProperty IRI="http://www.w3.org/2006/vcard/ns#hasLanguage"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#isLikedBy"/>
@@ -1315,6 +1993,10 @@
         <Class IRI="http://schema.org/CreativeWork"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://schema.org/produces"/>
+        <Class IRI="http://schema.org/Organization"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#actsIn"/>
         <Class IRI="#Actor"/>
     </ObjectPropertyDomain>
@@ -1333,6 +2015,14 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#belongsToCountry"/>
         <Class IRI="http://schema.org/CreativeWork"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#certificationOf"/>
+        <Class IRI="https://w3id.org/evorao/Certification"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#composedMusicFor"/>
+        <Class IRI="#MusicalArtist"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#direct"/>
@@ -1368,11 +2058,11 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasGenre"/>
-        <ObjectUnionOf>
-            <Class IRI="http://id.nlm.nih.gov/mesh/D001363"/>
-            <Class IRI="http://schema.org/CreativeWork"/>
-            <Class IRI="#OnlineRetailer"/>
-        </ObjectUnionOf>
+        <Class IRI="http://schema.org/CreativeWork"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasMusicBy"/>
+        <Class IRI="http://schema.org/CreativeWork"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasRating"/>
@@ -1384,6 +2074,10 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasReviewer"/>
+        <Class IRI="http://schema.org/CreativeWork"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasScreenplayBy"/>
         <Class IRI="http://schema.org/CreativeWork"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -1399,8 +2093,20 @@
         <Class IRI="#OnlineRetailer"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isCountryOf"/>
+        <Class IRI="http://dbpedia.org/ontology/Country"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#isGenreOf"/>
         <Class IRI="#Genre"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isLanguageOf"/>
+        <Class IRI="http://schema.org/Language"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isLanguageOfSubtitle"/>
+        <Class IRI="http://schema.org/Language"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isLikedBy"/>
@@ -1455,6 +2161,10 @@
         <Class IRI="http://schema.org/Review"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#wroteScreenplayFor"/>
+        <Class IRI="http://snomed.info/id/308004006"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="http://www.w3.org/2006/vcard/ns#hasLanguage"/>
         <Class IRI="http://schema.org/CreativeWork"/>
     </ObjectPropertyDomain>
@@ -1478,13 +2188,13 @@
         <ObjectProperty abbreviatedIRI="schema:inLanguage"/>
         <Class IRI="#OnlineRetailer"/>
     </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI="schema:produces"/>
-        <Class IRI="http://schema.org/Organization"/>
-    </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0003001"/>
         <Class IRI="http://schema.org/Organization"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://schema.org/produces"/>
+        <Class IRI="http://schema.org/CreativeWork"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#actsIn"/>
@@ -1505,6 +2215,14 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#belongsToCountry"/>
         <Class IRI="http://dbpedia.org/ontology/Country"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#certificationOf"/>
+        <Class IRI="http://schema.org/CreativeWork"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#composedMusicFor"/>
+        <Class IRI="http://schema.org/CreativeWork"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#direct"/>
@@ -1543,6 +2261,10 @@
         <Class IRI="#Genre"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasMusicBy"/>
+        <Class IRI="#MusicalArtist"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasRating"/>
         <Class IRI="http://schema.org/Rating"/>
     </ObjectPropertyRange>
@@ -1553,6 +2275,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasReviewer"/>
         <Class IRI="#Viewer"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasScreenplayBy"/>
+        <Class IRI="http://snomed.info/id/308004006"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasSubtitle"/>
@@ -1567,8 +2293,20 @@
         <Class IRI="http://schema.org/CreativeWork"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#isCountryOf"/>
+        <Class IRI="http://schema.org/CreativeWork"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#isGenreOf"/>
         <Class IRI="http://schema.org/CreativeWork"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isLanguageOf"/>
+        <Class IRI="http://schema.org/CreativeWork"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isLanguageOfSubtitle"/>
+        <Class IRI="#Subtitle"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isLikedBy"/>
@@ -1621,6 +2359,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#writtenByViewer"/>
         <Class IRI="#Viewer"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#wroteScreenplayFor"/>
+        <Class IRI="http://schema.org/CreativeWork"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="http://www.w3.org/2006/vcard/ns#hasLanguage"/>
@@ -1646,10 +2388,6 @@
         <ObjectProperty abbreviatedIRI="schema:inLanguage"/>
         <Class IRI="http://schema.org/Language"/>
     </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="schema:produces"/>
-        <Class IRI="http://schema.org/CreativeWork"/>
-    </ObjectPropertyRange>
     <DataPropertyDomain>
         <DataProperty IRI="http://schema.org/awards"/>
         <ObjectUnionOf>
@@ -1664,11 +2402,7 @@
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="http://schema.org/birthDate"/>
-        <ObjectUnionOf>
-            <Class IRI="http://snomed.info/id/308004006"/>
-            <Class IRI="http://snomed.info/id/308009001"/>
-            <Class IRI="#Actor"/>
-        </ObjectUnionOf>
+        <Class IRI="http://schema.org/Person"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="http://schema.org/dateCreated"/>
@@ -1687,10 +2421,7 @@
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="http://schema.org/email"/>
-        <ObjectUnionOf>
-            <Class IRI="#Rater"/>
-            <Class IRI="#Viewer"/>
-        </ObjectUnionOf>
+        <Class IRI="http://schema.org/Person"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="http://schema.org/episodeNumber"/>
@@ -1702,16 +2433,7 @@
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="http://schema.org/givenName"/>
-        <ObjectUnionOf>
-            <Class IRI="http://snomed.info/id/308004006"/>
-            <Class IRI="http://snomed.info/id/308009001"/>
-            <Class IRI="http://snomed.info/id/308010006"/>
-            <Class IRI="#Actor"/>
-            <Class IRI="#Editor"/>
-            <Class IRI="#MusicalArtist"/>
-            <Class IRI="#Rater"/>
-            <Class IRI="#Viewer"/>
-        </ObjectUnionOf>
+        <Class IRI="http://schema.org/Person"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="http://schema.org/identifier"/>
@@ -1719,13 +2441,6 @@
             <Class IRI="http://id.nlm.nih.gov/mesh/D001363"/>
             <Class IRI="http://schema.org/CreativeWork"/>
             <Class IRI="https://w3id.org/evorao/Certification"/>
-        </ObjectUnionOf>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="http://schema.org/jobTitle"/>
-        <ObjectUnionOf>
-            <Class IRI="#Editor"/>
-            <Class IRI="#MusicalArtist"/>
         </ObjectUnionOf>
     </DataPropertyDomain>
     <DataPropertyDomain>
@@ -1745,12 +2460,7 @@
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="http://schema.org/nationality"/>
-        <ObjectUnionOf>
-            <Class IRI="http://snomed.info/id/308004006"/>
-            <Class IRI="http://snomed.info/id/308009001"/>
-            <Class IRI="http://snomed.info/id/308010006"/>
-            <Class IRI="#Actor"/>
-        </ObjectUnionOf>
+        <Class IRI="http://schema.org/Person"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="http://schema.org/numberOfEpisodes"/>
@@ -1859,10 +2569,6 @@
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="http://schema.org/jobTitle"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
         <DataProperty IRI="http://schema.org/name"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
@@ -1927,9 +2633,21 @@
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://dbpedia.org/ontology/Country</IRI>
+        <Literal>&quot;A sovereign nation associated with the origin or 
+                         distribution of media content.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>http://dbpedia.org/ontology/Country</IRI>
         <Literal>Country</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://id.nlm.nih.gov/mesh/D001363</IRI>
+        <Literal>&quot;A recognition or honor given to a media work or 
+                         person for outstanding achievement.&quot;</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -1937,9 +2655,21 @@
         <Literal>Award</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://id.nlm.nih.gov/mesh/D004324</IRI>
+        <Literal>&quot;A genre focusing on realistic storytelling with 
+                         emotional and serious themes.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>http://id.nlm.nih.gov/mesh/D004324</IRI>
         <Literal>Drama</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://purl.obolibrary.org/obo/RO_0003001</IRI>
+        <Literal>&quot;Relates a creative work to the organization 
+                    that produced it.&quot;</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -1947,9 +2677,20 @@
         <Literal>producedByCompany</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://schema.org/CreativeWork</IRI>
+        <Literal>&quot;The top-level class representing any creative media content including movies and TV series.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>http://schema.org/CreativeWork</IRI>
         <Literal>Media</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://schema.org/Episode</IRI>
+        <Literal>&quot;A single installment of a TV series belonging to 
+                         a specific season.&quot;</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -1957,9 +2698,20 @@
         <Literal>Episode</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://schema.org/Language</IRI>
+        <Literal>&quot;A human language used in media content or subtitles.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>http://schema.org/Language</IRI>
         <Literal>Language</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://schema.org/Movie</IRI>
+        <Literal>&quot;A feature-length film produced for theatrical or 
+                         digital release.&quot;</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -1967,9 +2719,21 @@
         <Literal>Movie</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://schema.org/Organization</IRI>
+        <Literal>&quot;A company or group responsible for producing or 
+                         distributing media content.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>http://schema.org/Organization</IRI>
         <Literal>ProductionCompany</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://schema.org/Person</IRI>
+        <Literal>&quot;A human individual associated with the creation, 
+                         performance, or consumption of media.&quot;</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -1977,9 +2741,21 @@
         <Literal>Person</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://schema.org/Rating</IRI>
+        <Literal>&quot;A numerical or qualitative evaluation assigned to 
+                         a media work.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>http://schema.org/Rating</IRI>
         <Literal>Rating</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://schema.org/Review</IRI>
+        <Literal>&quot;A written critique or opinion about a media work 
+                         provided by a viewer.&quot;</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -1987,9 +2763,251 @@
         <Literal>Review</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://schema.org/TVSeries</IRI>
+        <Literal>&quot;A serialized video production released in episodes 
+                         across one or more seasons.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>http://schema.org/TVSeries</IRI>
         <Literal>TVSeries</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://schema.org/awards</IRI>
+        <Literal>&quot;A textual list of awards received 
+                    by a media work or person.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://schema.org/awards</IRI>
+        <Literal>awards</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://schema.org/bestRating</IRI>
+        <Literal>&quot;The maximum possible score in 
+                    a rating scale.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://schema.org/bestRating</IRI>
+        <Literal>bestRating</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://schema.org/birthDate</IRI>
+        <Literal>&quot;The date of birth of a person associated 
+                    with a media production.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://schema.org/birthDate</IRI>
+        <Literal>birthDate</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://schema.org/dateCreated</IRI>
+        <Literal>&quot;The date on which a review or 
+                    other content was authored.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://schema.org/dateCreated</IRI>
+        <Literal>dateCreated</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://schema.org/description</IRI>
+        <Literal>&quot;A textual summary describing a creative 
+                    work&apos;s plot or content.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://schema.org/description</IRI>
+        <Literal>description</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://schema.org/duration</IRI>
+        <Literal>&quot;The total runtime of a media work 
+                    expressed in ISO 8601 format.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://schema.org/duration</IRI>
+        <Literal>duration</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://schema.org/email</IRI>
+        <Literal>&quot;The electronic mail address of a person 
+                    or entity in the ontology.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://schema.org/email</IRI>
+        <Literal>email</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://schema.org/episodeNumber</IRI>
+        <Literal>&quot;Episode number the viewer is currently on.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://schema.org/episodeNumber</IRI>
+        <Literal>episodeNumber</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://schema.org/gender</IRI>
+        <Literal>&quot;The gender identity of a person associated 
+                    with media content.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://schema.org/gender</IRI>
+        <Literal>gender</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://schema.org/givenName</IRI>
+        <Literal>&quot;The personal or first name of a person 
+                    involved in media production or consumption.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://schema.org/givenName</IRI>
+        <Literal>givenName</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://schema.org/identifier</IRI>
+        <Literal>&quot;A unique code or string used to identify 
+                    an entity within the ontology.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://schema.org/identifier</IRI>
+        <Literal>identifier</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://schema.org/name</IRI>
+        <Literal>&quot;The official title or name of an entity 
+                    such as a media work, person, or platform.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://schema.org/name</IRI>
+        <Literal>name</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://schema.org/nationality</IRI>
+        <Literal>&quot;The country of citizenship of a person 
+                    involved in media.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://schema.org/nationality</IRI>
+        <Literal>nationality</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://schema.org/numberOfEpisodes</IRI>
+        <Literal>&quot;The total count of episodes 
+                    in a TV series.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://schema.org/numberOfEpisodes</IRI>
+        <Literal>numberOfEpisodes</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://schema.org/numberOfSeasons</IRI>
+        <Literal>&quot;The total count of seasons 
+                    in a TV series.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://schema.org/numberOfSeasons</IRI>
+        <Literal>numberOfSeasons</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://schema.org/produces</IRI>
+        <Literal>&quot;Relates a production company to the creative 
+                    work it has produced.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://schema.org/produces</IRI>
+        <Literal>produces</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://schema.org/ratingValue</IRI>
+        <Literal>&quot;The numerical score assigned to a 
+                    media work in a rating.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://schema.org/ratingValue</IRI>
+        <Literal>ratingValue</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://schema.org/reviewBody</IRI>
+        <Literal>&quot;The main textual content of a 
+                    review written about a media work.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://schema.org/reviewBody</IRI>
+        <Literal>reviewBody</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://schema.org/seasonNumber</IRI>
+        <Literal>The sequential number identifying 
+                    which season an episode belongs to.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://schema.org/seasonNumber</IRI>
+        <Literal>seasonNumber</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://schema.org/url</IRI>
+        <Literal>&quot;The web address where an entity or 
+                    resource can be accessed online.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://schema.org/url</IRI>
+        <Literal>url</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://schema.org/worstRating</IRI>
+        <Literal>&quot;The minimum possible score in 
+                    a rating scale.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://schema.org/worstRating</IRI>
+        <Literal>worstRating</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://snomed.info/id/308004006</IRI>
+        <Literal>&quot;A person who authors the screenplay or script 
+                         for a media production.&quot;</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -1997,9 +3015,21 @@
         <Literal>Writer</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://snomed.info/id/308009001</IRI>
+        <Literal>&quot;A person who oversees the creative and technical 
+                         aspects of a media production.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>http://snomed.info/id/308009001</IRI>
         <Literal>Director</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://snomed.info/id/308010006</IRI>
+        <Literal>&quot;A person responsible for managing the financial 
+                         and organizational aspects of a production.&quot;</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2007,9 +3037,691 @@
         <Literal>Producer</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Action</IRI>
+        <Literal>&quot;A genre characterized by physical feats, fights, and high-energy sequences.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Action</IRI>
+        <Literal>Action</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Actor</IRI>
+        <Literal>&quot;A person who performs roles in movies or TV series.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Actor</IRI>
+        <Literal>Actor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Animation</IRI>
+        <Literal>&quot;A genre using animated visuals to tell stories, often for broad audiences.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Animation</IRI>
+        <Literal>Animation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Comedy</IRI>
+        <Literal>&quot;A genre intended to provoke laughter and amusement in the audience.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Comedy</IRI>
+        <Literal>Comedy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Editor</IRI>
+        <Literal>&quot;A person responsible for assembling and refining film footage.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Editor</IRI>
+        <Literal>Editor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Genre</IRI>
+        <Literal>&quot;A category that classifies media based on narrative style and content.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Genre</IRI>
+        <Literal>Genre</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Horror</IRI>
+        <Literal>&quot;A genre designed to frighten, disturb, or unsettle the audience.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Horror</IRI>
+        <Literal>Horror</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MusicalArtist</IRI>
+        <Literal>&quot;A person who composes or performs music for media productions.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MusicalArtist</IRI>
+        <Literal>MusicalArtist</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#OnlineRetailer</IRI>
+        <Literal>&quot;A digital platform that distributes or sells media content online.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#OnlineRetailer</IRI>
+        <Literal>OnlineRetailer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Rater</IRI>
+        <Literal>&quot;A person who assigns numerical scores to evaluate media content.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Rater</IRI>
+        <Literal>Rater</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Romance</IRI>
+        <Literal>&quot;A genre focusing on love stories and emotional relationships.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Romance</IRI>
+        <Literal>Romance</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#StreamingPlatform</IRI>
+        <Literal>&quot;An online service that delivers media content via internet streaming.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#StreamingPlatform</IRI>
+        <Literal>StreamingPlatform</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Subtitle</IRI>
+        <Literal>&quot;A textual representation of dialogue displayed on screen for accessibility.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Subtitle</IRI>
+        <Literal>Subtitle</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Thriller</IRI>
+        <Literal>&quot;A genre that builds suspense and excitement through tension-driven plots.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Thriller</IRI>
+        <Literal>Thriller</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#VideoHostingService</IRI>
+        <Literal>&quot;An online platform that hosts and serves video content to users.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#VideoHostingService</IRI>
+        <Literal>VideoHostingService</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Viewer</IRI>
+        <Literal>&quot;A person who watches and engages with media content.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Viewer</IRI>
+        <Literal>Viewer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#actsIn</IRI>
+        <Literal>&quot;Relates an actor to the creative work they perform in.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#actsIn</IRI>
+        <Literal>actsIn</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#availableOn</IRI>
+        <Literal>&quot;Relates a media work to the platform where it can be accessed.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#availableOn</IRI>
+        <Literal>availableOn</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#awardGivenTo</IRI>
+        <Literal>&quot;Relates an award to the person who received it.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#awardGivenTo</IRI>
+        <Literal>awardGivenTo</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#awardYear</IRI>
+        <Literal>&quot;The year in which the award was presented.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#awardYear</IRI>
+        <Literal>awardYear</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#awardedTo</IRI>
+        <Literal>&quot;Relates an award to the creative work that received it.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#awardedTo</IRI>
+        <Literal>awardedTo</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#belongsToCountry</IRI>
+        <Literal>&quot;Relates a creative work to its country of origin.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#belongsToCountry</IRI>
+        <Literal>belongsToCountry</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#boxOfficeRevenue</IRI>
+        <Literal>&quot;The total revenue earned by a movie at the box office.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#boxOfficeRevenue</IRI>
+        <Literal>boxOfficeRevenue</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#budget</IRI>
+        <Literal>&quot;The total production budget allocated for a movie.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#budget</IRI>
+        <Literal>budget</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#certificationOf</IRI>
+        <Literal>&quot;Relates a certification to the creative work it has been assigned to.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#certificationOf</IRI>
+        <Literal>certificationOf</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#composedMusicFor</IRI>
+        <Literal>&quot;Relates a musical artist to the work they composed music for.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#composedMusicFor</IRI>
+        <Literal>composedMusicFor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#direct</IRI>
+        <Literal>&quot;Relates a director to the creative work they directed.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#direct</IRI>
+        <Literal>direct</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#distributedBy</IRI>
+        <Literal>&quot;Relates a media work to the retailer distributing it.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#distributedBy</IRI>
+        <Literal>distributedBy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#distrubutes</IRI>
+        <Literal>&quot;Relates an online retailer to the creative 
+                    work it distributes to viewers.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#distrubutes</IRI>
         <Literal>distributes</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#followedBy</IRI>
+        <Literal>&quot;Relates a TV series to the viewer who regularly follows it.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#followedBy</IRI>
+        <Literal>followedBy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#followsSeries</IRI>
+        <Literal>&quot;Relates a viewer to a TV series they regularly follow.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#followsSeries</IRI>
+        <Literal>followsSeries</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#givenByRater</IRI>
+        <Literal>&quot;Relates a rating to the rater who provided it.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#givenByRater</IRI>
+        <Literal>givenByRater</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#givesRating</IRI>
+        <Literal>&quot;Relates a rater to the rating they assign.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#givesRating</IRI>
+        <Literal>givesRating</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasAward</IRI>
+        <Literal>&quot;Relates a creative work to an award it has received.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasAward</IRI>
+        <Literal>hasAward</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasGenre</IRI>
+        <Literal>&quot;Relates a media work to its genre classification.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasGenre</IRI>
+        <Literal>hasGenre</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasMusicBy</IRI>
+        <Literal>&quot;Relates a creative work to the musical artist who composed its music.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasMusicBy</IRI>
+        <Literal>hasMusicBy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasRating</IRI>
+        <Literal>&quot;Relates a creative work to its associated rating.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasRating</IRI>
+        <Literal>hasRating</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasReview</IRI>
+        <Literal>&quot;Relates a creative work to a review written about it.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasReview</IRI>
+        <Literal>hasReview</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasReviewer</IRI>
+        <Literal>&quot;Relates a creative work to the viewer who reviewed it.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasReviewer</IRI>
+        <Literal>hasReviewer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasScreenplayBy</IRI>
+        <Literal>&quot;Relates a creative work to the writer who wrote its screenplay.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasScreenplayBy</IRI>
+        <Literal>hasScreenplayBy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasSubtitle</IRI>
+        <Literal>&quot;Relates a media work to its subtitle resource.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasSubtitle</IRI>
+        <Literal>hasSubtitle</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasSubtitleLanguage</IRI>
+        <Literal>&quot;Relates a subtitle to the language it is written in.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasSubtitleLanguage</IRI>
+        <Literal>hasSubtitleLanguage</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hosts</IRI>
+        <Literal>&quot;Relates an online platform to the media content it hosts.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hosts</IRI>
+        <Literal>hosts</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#inLanguageOf</IRI>
+        <Literal>&quot;Relates a language to the media work or platform it is used in.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#inLanguageOf</IRI>
+        <Literal>inLanguageOf</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isCountryOf</IRI>
+        <Literal>&quot;Relates a country to the creative work that originates from it.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isCountryOf</IRI>
+        <Literal>isCountryOf</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isGenreOf</IRI>
+        <Literal>&quot;Relates a genre to the creative work it classifies.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isGenreOf</IRI>
+        <Literal>isGenreOf</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isLanguageOf</IRI>
+        <Literal>&quot;Relates a language to the creative work it is used in.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isLanguageOf</IRI>
+        <Literal>isLanguageOf</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isLanguageOfSubtitle</IRI>
+        <Literal>&quot;Relates a language to the subtitle it is written in.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isLanguageOfSubtitle</IRI>
+        <Literal>isLanguageOfSubtitle</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isLikedBy</IRI>
+        <Literal>&quot;Relates a media work to a viewer who expressed a like for it.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isLikedBy</IRI>
+        <Literal>isLikedBy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isRatingOf</IRI>
+        <Literal>&quot;Relates a rating to the creative work it evaluates.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isRatingOf</IRI>
+        <Literal>isRatingOf</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isReviewOf</IRI>
+        <Literal>&quot;Relates a review to the creative work it describes.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isReviewOf</IRI>
+        <Literal>isReviewOf</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#likesMedia</IRI>
+        <Literal>&quot;Relates a viewer to the media content they have liked.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#likesMedia</IRI>
+        <Literal>likesMedia</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#memberSince</IRI>
+        <Literal>&quot;The date on which the viewer or rater joined the platform.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#memberSince</IRI>
+        <Literal>memberSince</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ratedBy</IRI>
+        <Literal>&quot;Relates a creative work to the rater who evaluated it.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ratedBy</IRI>
+        <Literal>ratedBy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ratesMedia</IRI>
+        <Literal>&quot;Relates a rater to the media content they have rated.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ratesMedia</IRI>
+        <Literal>ratesMedia</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#receivedAward</IRI>
+        <Literal>&quot;Relates a person to an award they have received.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#receivedAward</IRI>
+        <Literal>receivedAward</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#reviewsMedia</IRI>
+        <Literal>&quot;Relates a viewer to the media content they have reviewed.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#reviewsMedia</IRI>
+        <Literal>reviewsMedia</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#servedBy</IRI>
+        <Literal>&quot;Relates a country to the online retailer that serves it.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#servedBy</IRI>
+        <Literal>servedBy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#subscriptionPrice</IRI>
+        <Literal>&quot;The monthly or annual fee charged for platform access.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#subscriptionPrice</IRI>
+        <Literal>subscriptionPrice</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#subscriptionType</IRI>
+        <Literal>&quot;The tier or plan type of a platform subscription.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#subscriptionType</IRI>
+        <Literal>subscriptionType</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#subtitleFormat</IRI>
+        <Literal>&quot;The file format used for the subtitle, such as SRT or VTT.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#subtitleFormat</IRI>
+        <Literal>subtitleFormat</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#subtitleOf</IRI>
+        <Literal>&quot;Relates a subtitle to the creative work it belongs to.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#subtitleOf</IRI>
+        <Literal>subtitleOf</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#watchedBy</IRI>
+        <Literal>&quot;Relates a media work to the viewer who has watched it.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#watchedBy</IRI>
+        <Literal>watchedBy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#watches</IRI>
+        <Literal>&quot;Relates a viewer to the media content they have watched.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#watches</IRI>
+        <Literal>watches</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#writesReview</IRI>
+        <Literal>&quot;Relates a viewer to the review they have authored.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#writesReview</IRI>
+        <Literal>writesReview</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#writtenByViewer</IRI>
+        <Literal>&quot;Relates a review to the viewer who wrote it.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#writtenByViewer</IRI>
+        <Literal>writtenByViewer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#wroteScreenplayFor</IRI>
+        <Literal>&quot;Relates a writer to the media work they wrote the screenplay for.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#wroteScreenplayFor</IRI>
+        <Literal>wroteScreenplayFor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.w3.org/2006/vcard/ns#hasLanguage</IRI>
+        <Literal>&quot;Relates a creative work to the language 
+                    in which it is presented.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.w3.org/2006/vcard/ns#hasLanguage</IRI>
+        <Literal>hasLanguage</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>schema:actor</AbbreviatedIRI>
+        <Literal>&quot;Relates a creative work to the actor who performs in it.&quot;</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2017,9 +3729,19 @@
         <Literal>hasActor</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>schema:areaServed</AbbreviatedIRI>
+        <Literal>&quot;Relates an online retailer to the country where it provides its services.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <AbbreviatedIRI>schema:areaServed</AbbreviatedIRI>
         <Literal>availableInCountry</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>schema:director</AbbreviatedIRI>
+        <Literal>&quot;Relates a creative work to its director.&quot;</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -2027,9 +3749,37 @@
         <Literal>directedBy</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>schema:hasCertification</AbbreviatedIRI>
+        <Literal>&quot;Relates a creative work to its official 
+                    content rating or certification.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>schema:hasCertification</AbbreviatedIRI>
+        <Literal>hasCertification</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>schema:inLanguage</AbbreviatedIRI>
+        <Literal>&quot;Relates a media work or platform to the 
+                    language it is available in.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <AbbreviatedIRI>schema:inLanguage</AbbreviatedIRI>
         <Literal>offersLanguage</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://w3id.org/evorao/Certification</IRI>
+        <Literal>&quot;An official content rating or classification 
+                         assigned to media by a regulatory body.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>https://w3id.org/evorao/Certification</IRI>
+        <Literal>Certification</Literal>
     </AnnotationAssertion>
 </Ontology>
 
