@@ -45,24 +45,12 @@ search, and recommendation of entertainment content.</rdfs:comment>
     <!-- http://purl.obolibrary.org/obo/RO_0003001 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0003001">
-        <owl:inverseOf rdf:resource="http://schema.org/produces"/>
+        <owl:inverseOf rdf:resource="https://schema.org/produces"/>
         <rdfs:domain rdf:resource="http://schema.org/CreativeWork"/>
         <rdfs:range rdf:resource="http://schema.org/Organization"/>
         <rdfs:comment>&quot;Relates a creative work to the organization 
                     that produced it.&quot;</rdfs:comment>
         <rdfs:label>producedByCompany</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://schema.org/produces -->
-
-    <owl:ObjectProperty rdf:about="http://schema.org/produces">
-        <rdfs:domain rdf:resource="http://schema.org/Organization"/>
-        <rdfs:range rdf:resource="http://schema.org/CreativeWork"/>
-        <rdfs:comment>&quot;Relates a production company to the creative 
-                    work it has produced.&quot;</rdfs:comment>
-        <rdfs:label>produces</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -118,35 +106,10 @@ search, and recommendation of entertainment content.</rdfs:comment>
     <!-- http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#belongsToCountry -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#belongsToCountry">
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#isCountryOf"/>
         <rdfs:domain rdf:resource="http://schema.org/CreativeWork"/>
         <rdfs:range rdf:resource="http://dbpedia.org/ontology/Country"/>
         <rdfs:comment>&quot;Relates a creative work to its country of origin.&quot;</rdfs:comment>
         <rdfs:label>belongsToCountry</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#certificationOf -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#certificationOf">
-        <owl:inverseOf rdf:resource="https://schema.org/hasCertification"/>
-        <rdfs:domain rdf:resource="https://w3id.org/evorao/Certification"/>
-        <rdfs:range rdf:resource="http://schema.org/CreativeWork"/>
-        <rdfs:comment>&quot;Relates a certification to the creative work it has been assigned to.&quot;</rdfs:comment>
-        <rdfs:label>certificationOf</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#composedMusicFor -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#composedMusicFor">
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#hasMusicBy"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#MusicalArtist"/>
-        <rdfs:range rdf:resource="http://schema.org/CreativeWork"/>
-        <rdfs:comment>&quot;Relates a musical artist to the work they composed music for.&quot;</rdfs:comment>
-        <rdfs:label>composedMusicFor</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -248,21 +211,18 @@ search, and recommendation of entertainment content.</rdfs:comment>
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#hasGenre">
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#isGenreOf"/>
-        <rdfs:domain rdf:resource="http://schema.org/CreativeWork"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://id.nlm.nih.gov/mesh/D001363"/>
+                    <rdf:Description rdf:about="http://schema.org/CreativeWork"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#OnlineRetailer"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Genre"/>
         <rdfs:comment>&quot;Relates a media work to its genre classification.&quot;</rdfs:comment>
         <rdfs:label>hasGenre</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#hasMusicBy -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#hasMusicBy">
-        <rdfs:domain rdf:resource="http://schema.org/CreativeWork"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#MusicalArtist"/>
-        <rdfs:comment>&quot;Relates a creative work to the musical artist who composed its music.&quot;</rdfs:comment>
-        <rdfs:label>hasMusicBy</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -303,18 +263,6 @@ search, and recommendation of entertainment content.</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#hasScreenplayBy -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#hasScreenplayBy">
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#wroteScreenplayFor"/>
-        <rdfs:domain rdf:resource="http://schema.org/CreativeWork"/>
-        <rdfs:range rdf:resource="http://snomed.info/id/308004006"/>
-        <rdfs:comment>&quot;Relates a creative work to the writer who wrote its screenplay.&quot;</rdfs:comment>
-        <rdfs:label>hasScreenplayBy</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#hasSubtitle -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#hasSubtitle">
@@ -330,7 +278,6 @@ search, and recommendation of entertainment content.</rdfs:comment>
     <!-- http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#hasSubtitleLanguage -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#hasSubtitleLanguage">
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#isLanguageOfSubtitle"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Subtitle"/>
         <rdfs:range rdf:resource="http://schema.org/Language"/>
         <rdfs:comment>&quot;Relates a subtitle to the language it is written in.&quot;</rdfs:comment>
@@ -350,17 +297,6 @@ search, and recommendation of entertainment content.</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#isCountryOf -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#isCountryOf">
-        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Country"/>
-        <rdfs:range rdf:resource="http://schema.org/CreativeWork"/>
-        <rdfs:comment>&quot;Relates a country to the creative work that originates from it.&quot;</rdfs:comment>
-        <rdfs:label>isCountryOf</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#isGenreOf -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#isGenreOf">
@@ -368,29 +304,6 @@ search, and recommendation of entertainment content.</rdfs:comment>
         <rdfs:range rdf:resource="http://schema.org/CreativeWork"/>
         <rdfs:comment>&quot;Relates a genre to the creative work it classifies.&quot;</rdfs:comment>
         <rdfs:label>isGenreOf</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#isLanguageOf -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#isLanguageOf">
-        <owl:inverseOf rdf:resource="http://www.w3.org/2006/vcard/ns#hasLanguage"/>
-        <rdfs:domain rdf:resource="http://schema.org/Language"/>
-        <rdfs:range rdf:resource="http://schema.org/CreativeWork"/>
-        <rdfs:comment>&quot;Relates a language to the creative work it is used in.&quot;</rdfs:comment>
-        <rdfs:label>isLanguageOf</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#isLanguageOfSubtitle -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#isLanguageOfSubtitle">
-        <rdfs:domain rdf:resource="http://schema.org/Language"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Subtitle"/>
-        <rdfs:comment>&quot;Relates a language to the subtitle it is written in.&quot;</rdfs:comment>
-        <rdfs:label>isLanguageOfSubtitle</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -542,17 +455,6 @@ search, and recommendation of entertainment content.</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#wroteScreenplayFor -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#wroteScreenplayFor">
-        <rdfs:domain rdf:resource="http://snomed.info/id/308004006"/>
-        <rdfs:range rdf:resource="http://schema.org/CreativeWork"/>
-        <rdfs:comment>&quot;Relates a writer to the media work they wrote the screenplay for.&quot;</rdfs:comment>
-        <rdfs:label>wroteScreenplayFor</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://www.w3.org/2006/vcard/ns#hasLanguage -->
 
     <owl:ObjectProperty rdf:about="http://www.w3.org/2006/vcard/ns#hasLanguage">
@@ -622,6 +524,15 @@ search, and recommendation of entertainment content.</rdfs:comment>
     
 
 
+    <!-- https://schema.org/produces -->
+
+    <owl:ObjectProperty rdf:about="https://schema.org/produces">
+        <rdfs:domain rdf:resource="http://schema.org/Organization"/>
+        <rdfs:range rdf:resource="http://schema.org/CreativeWork"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -668,7 +579,15 @@ search, and recommendation of entertainment content.</rdfs:comment>
     <!-- http://schema.org/birthDate -->
 
     <owl:DatatypeProperty rdf:about="http://schema.org/birthDate">
-        <rdfs:domain rdf:resource="http://schema.org/Person"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://snomed.info/id/308004006"/>
+                    <rdf:Description rdf:about="http://snomed.info/id/308009001"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Actor"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>&quot;The date of birth of a person associated 
                     with a media production.&quot;</rdfs:comment>
@@ -723,7 +642,14 @@ search, and recommendation of entertainment content.</rdfs:comment>
     <!-- http://schema.org/email -->
 
     <owl:DatatypeProperty rdf:about="http://schema.org/email">
-        <rdfs:domain rdf:resource="http://schema.org/Person"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Rater"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Viewer"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>&quot;The electronic mail address of a person 
                     or entity in the ontology.&quot;</rdfs:comment>
@@ -758,7 +684,20 @@ search, and recommendation of entertainment content.</rdfs:comment>
     <!-- http://schema.org/givenName -->
 
     <owl:DatatypeProperty rdf:about="http://schema.org/givenName">
-        <rdfs:domain rdf:resource="http://schema.org/Person"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://snomed.info/id/308004006"/>
+                    <rdf:Description rdf:about="http://snomed.info/id/308009001"/>
+                    <rdf:Description rdf:about="http://snomed.info/id/308010006"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Actor"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Editor"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#MusicalArtist"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Rater"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Viewer"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>&quot;The personal or first name of a person 
                     involved in media production or consumption.&quot;</rdfs:comment>
@@ -783,6 +722,17 @@ search, and recommendation of entertainment content.</rdfs:comment>
         <rdfs:comment>&quot;A unique code or string used to identify 
                     an entity within the ontology.&quot;</rdfs:comment>
         <rdfs:label>identifier</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.org/jobTitle -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/jobTitle">
+        <rdfs:domain rdf:resource="http://schema.org/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The level of a Job performed by Person</rdfs:comment>
+        <rdfs:label>schema:jobTitle</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -817,7 +767,16 @@ search, and recommendation of entertainment content.</rdfs:comment>
     <!-- http://schema.org/nationality -->
 
     <owl:DatatypeProperty rdf:about="http://schema.org/nationality">
-        <rdfs:domain rdf:resource="http://schema.org/Person"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://snomed.info/id/308004006"/>
+                    <rdf:Description rdf:about="http://snomed.info/id/308009001"/>
+                    <rdf:Description rdf:about="http://snomed.info/id/308010006"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Actor"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>&quot;The country of citizenship of a person 
                     involved in media.&quot;</rdfs:comment>
@@ -1015,13 +974,6 @@ search, and recommendation of entertainment content.</rdfs:comment>
     <!-- http://dbpedia.org/ontology/Country -->
 
     <owl:Class rdf:about="http://dbpedia.org/ontology/Country">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.org/name"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment>&quot;A sovereign nation associated with the origin or 
                          distribution of media content.&quot;</rdfs:comment>
         <rdfs:label>Country</rdfs:label>
@@ -1032,27 +984,6 @@ search, and recommendation of entertainment content.</rdfs:comment>
     <!-- http://id.nlm.nih.gov/mesh/D001363 -->
 
     <owl:Class rdf:about="http://id.nlm.nih.gov/mesh/D001363">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.org/identifier"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.org/name"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#awardYear"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment>&quot;A recognition or honor given to a media work or 
                          person for outstanding achievement.&quot;</rdfs:comment>
         <rdfs:label>Award</rdfs:label>
@@ -1064,18 +995,6 @@ search, and recommendation of entertainment content.</rdfs:comment>
 
     <owl:Class rdf:about="http://id.nlm.nih.gov/mesh/D004324">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Genre"/>
-        <owl:disjointWith>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Action"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Animation"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Comedy"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Horror"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Romance"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Thriller"/>
-                </owl:unionOf>
-            </owl:Class>
-        </owl:disjointWith>
         <rdfs:comment>&quot;A genre focusing on realistic storytelling with 
                          emotional and serious themes.&quot;</rdfs:comment>
         <rdfs:label>Drama</rdfs:label>
@@ -1115,84 +1034,6 @@ search, and recommendation of entertainment content.</rdfs:comment>
 
     <owl:Class rdf:about="http://schema.org/Movie">
         <rdfs:subClassOf rdf:resource="http://schema.org/CreativeWork"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#hasGenre"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Genre"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#hasReview"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="http://schema.org/Review"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#belongsToCountry"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://dbpedia.org/ontology/Country"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#hasRating"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onClass rdf:resource="http://schema.org/Rating"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.org/description"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.org/duration"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.org/identifier"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.org/name"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#boxOfficeRevenue"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#budget"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.org/awards"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <owl:disjointWith rdf:resource="http://schema.org/TVSeries"/>
         <rdfs:comment>&quot;A feature-length film produced for theatrical or 
                          digital release.&quot;</rdfs:comment>
         <rdfs:label>Movie</rdfs:label>
@@ -1203,20 +1044,6 @@ search, and recommendation of entertainment content.</rdfs:comment>
     <!-- http://schema.org/Organization -->
 
     <owl:Class rdf:about="http://schema.org/Organization">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.org/name"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.org/url"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment>&quot;A company or group responsible for producing or 
                          distributing media content.&quot;</rdfs:comment>
         <rdfs:label>ProductionCompany</rdfs:label>
@@ -1237,34 +1064,6 @@ search, and recommendation of entertainment content.</rdfs:comment>
     <!-- http://schema.org/Rating -->
 
     <owl:Class rdf:about="http://schema.org/Rating">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#givenByRater"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Rater"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.org/bestRating"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.org/ratingValue"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.org/worstRating"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment>&quot;A numerical or qualitative evaluation assigned to 
                          a media work.&quot;</rdfs:comment>
         <rdfs:label>Rating</rdfs:label>
@@ -1275,34 +1074,6 @@ search, and recommendation of entertainment content.</rdfs:comment>
     <!-- http://schema.org/Review -->
 
     <owl:Class rdf:about="http://schema.org/Review">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#isReviewOf"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://schema.org/CreativeWork"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#writtenByViewer"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Viewer"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.org/dateCreated"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.org/reviewBody"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment>&quot;A written critique or opinion about a media work 
                          provided by a viewer.&quot;</rdfs:comment>
         <rdfs:label>Review</rdfs:label>
@@ -1325,54 +1096,6 @@ search, and recommendation of entertainment content.</rdfs:comment>
 
     <owl:Class rdf:about="http://snomed.info/id/308004006">
         <rdfs:subClassOf rdf:resource="http://schema.org/Person"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#wroteScreenplayFor"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="http://schema.org/CreativeWork"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.org/gender"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.org/givenName"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.org/nationality"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.org/birthDate"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <owl:disjointWith>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://snomed.info/id/308009001"/>
-                    <rdf:Description rdf:about="http://snomed.info/id/308010006"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Actor"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Editor"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#MusicalArtist"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Rater"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Viewer"/>
-                </owl:unionOf>
-            </owl:Class>
-        </owl:disjointWith>
         <rdfs:comment>&quot;A person who authors the screenplay or script 
                          for a media production.&quot;</rdfs:comment>
         <rdfs:label>Writer</rdfs:label>
@@ -1384,61 +1107,6 @@ search, and recommendation of entertainment content.</rdfs:comment>
 
     <owl:Class rdf:about="http://snomed.info/id/308009001">
         <rdfs:subClassOf rdf:resource="http://schema.org/Person"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#direct"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="http://schema.org/CreativeWork"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.org/gender"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.org/givenName"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.org/nationality"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.org/birthDate"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.org/email"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <owl:disjointWith>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://snomed.info/id/308004006"/>
-                    <rdf:Description rdf:about="http://snomed.info/id/308010006"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Actor"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Editor"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#MusicalArtist"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Rater"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Viewer"/>
-                </owl:unionOf>
-            </owl:Class>
-        </owl:disjointWith>
         <rdfs:comment>&quot;A person who oversees the creative and technical 
                          aspects of a media production.&quot;</rdfs:comment>
         <rdfs:label>Director</rdfs:label>
@@ -1450,47 +1118,6 @@ search, and recommendation of entertainment content.</rdfs:comment>
 
     <owl:Class rdf:about="http://snomed.info/id/308010006">
         <rdfs:subClassOf rdf:resource="http://schema.org/Person"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.org/produces"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="http://schema.org/CreativeWork"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.org/gender"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.org/givenName"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.org/nationality"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <owl:disjointWith>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://snomed.info/id/308004006"/>
-                    <rdf:Description rdf:about="http://snomed.info/id/308009001"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Actor"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Editor"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#MusicalArtist"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Rater"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Viewer"/>
-                </owl:unionOf>
-            </owl:Class>
-        </owl:disjointWith>
         <rdfs:comment>&quot;A person responsible for managing the financial 
                          and organizational aspects of a production.&quot;</rdfs:comment>
         <rdfs:label>Producer</rdfs:label>
@@ -1502,18 +1129,6 @@ search, and recommendation of entertainment content.</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Action">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Genre"/>
-        <owl:disjointWith>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://id.nlm.nih.gov/mesh/D004324"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Animation"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Comedy"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Horror"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Romance"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Thriller"/>
-                </owl:unionOf>
-            </owl:Class>
-        </owl:disjointWith>
         <rdfs:comment>&quot;A genre characterized by physical feats, fights, and high-energy sequences.&quot;</rdfs:comment>
         <rdfs:label>Action</rdfs:label>
     </owl:Class>
@@ -1524,54 +1139,6 @@ search, and recommendation of entertainment content.</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Actor">
         <rdfs:subClassOf rdf:resource="http://schema.org/Person"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#actsIn"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="http://schema.org/CreativeWork"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.org/gender"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.org/givenName"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.org/nationality"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.org/birthDate"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <owl:disjointWith>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://snomed.info/id/308004006"/>
-                    <rdf:Description rdf:about="http://snomed.info/id/308009001"/>
-                    <rdf:Description rdf:about="http://snomed.info/id/308010006"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Editor"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#MusicalArtist"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Rater"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Viewer"/>
-                </owl:unionOf>
-            </owl:Class>
-        </owl:disjointWith>
         <rdfs:comment>&quot;A person who performs roles in movies or TV series.&quot;</rdfs:comment>
         <rdfs:label>Actor</rdfs:label>
     </owl:Class>
@@ -1582,18 +1149,6 @@ search, and recommendation of entertainment content.</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Animation">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Genre"/>
-        <owl:disjointWith>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://id.nlm.nih.gov/mesh/D004324"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Action"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Comedy"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Horror"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Romance"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Thriller"/>
-                </owl:unionOf>
-            </owl:Class>
-        </owl:disjointWith>
         <rdfs:comment>&quot;A genre using animated visuals to tell stories, often for broad audiences.&quot;</rdfs:comment>
         <rdfs:label>Animation</rdfs:label>
     </owl:Class>
@@ -1604,18 +1159,6 @@ search, and recommendation of entertainment content.</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Comedy">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Genre"/>
-        <owl:disjointWith>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://id.nlm.nih.gov/mesh/D004324"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Action"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Animation"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Horror"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Romance"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Thriller"/>
-                </owl:unionOf>
-            </owl:Class>
-        </owl:disjointWith>
         <rdfs:comment>&quot;A genre intended to provoke laughter and amusement in the audience.&quot;</rdfs:comment>
         <rdfs:label>Comedy</rdfs:label>
     </owl:Class>
@@ -1626,19 +1169,6 @@ search, and recommendation of entertainment content.</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Editor">
         <rdfs:subClassOf rdf:resource="http://schema.org/Person"/>
-        <owl:disjointWith>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://snomed.info/id/308004006"/>
-                    <rdf:Description rdf:about="http://snomed.info/id/308009001"/>
-                    <rdf:Description rdf:about="http://snomed.info/id/308010006"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Actor"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#MusicalArtist"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Rater"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Viewer"/>
-                </owl:unionOf>
-            </owl:Class>
-        </owl:disjointWith>
         <rdfs:comment>&quot;A person responsible for assembling and refining film footage.&quot;</rdfs:comment>
         <rdfs:label>Editor</rdfs:label>
     </owl:Class>
@@ -1658,18 +1188,6 @@ search, and recommendation of entertainment content.</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Horror">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Genre"/>
-        <owl:disjointWith>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://id.nlm.nih.gov/mesh/D004324"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Action"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Animation"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Comedy"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Romance"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Thriller"/>
-                </owl:unionOf>
-            </owl:Class>
-        </owl:disjointWith>
         <rdfs:comment>&quot;A genre designed to frighten, disturb, or unsettle the audience.&quot;</rdfs:comment>
         <rdfs:label>Horror</rdfs:label>
     </owl:Class>
@@ -1680,40 +1198,6 @@ search, and recommendation of entertainment content.</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#MusicalArtist">
         <rdfs:subClassOf rdf:resource="http://schema.org/Person"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#composedMusicFor"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="http://schema.org/CreativeWork"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.org/gender"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.org/givenName"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <owl:disjointWith>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://snomed.info/id/308004006"/>
-                    <rdf:Description rdf:about="http://snomed.info/id/308009001"/>
-                    <rdf:Description rdf:about="http://snomed.info/id/308010006"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Actor"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Editor"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Rater"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Viewer"/>
-                </owl:unionOf>
-            </owl:Class>
-        </owl:disjointWith>
         <rdfs:comment>&quot;A person who composes or performs music for media productions.&quot;</rdfs:comment>
         <rdfs:label>MusicalArtist</rdfs:label>
     </owl:Class>
@@ -1723,48 +1207,6 @@ search, and recommendation of entertainment content.</rdfs:comment>
     <!-- http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#OnlineRetailer -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#OnlineRetailer">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#distrubutes"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="http://schema.org/CreativeWork"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#hosts"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="http://schema.org/CreativeWork"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.org/name"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.org/url"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#subscriptionPrice"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#subscriptionType"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment>&quot;A digital platform that distributes or sells media content online.&quot;</rdfs:comment>
         <rdfs:label>OnlineRetailer</rdfs:label>
     </owl:Class>
@@ -1775,61 +1217,6 @@ search, and recommendation of entertainment content.</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Rater">
         <rdfs:subClassOf rdf:resource="http://schema.org/Person"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#givesRating"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="http://schema.org/Rating"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#ratesMedia"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="http://schema.org/CreativeWork"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.org/gender"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.org/givenName"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#memberSince"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.org/email"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <owl:disjointWith>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://snomed.info/id/308004006"/>
-                    <rdf:Description rdf:about="http://snomed.info/id/308009001"/>
-                    <rdf:Description rdf:about="http://snomed.info/id/308010006"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Actor"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Editor"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#MusicalArtist"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Viewer"/>
-                </owl:unionOf>
-            </owl:Class>
-        </owl:disjointWith>
         <rdfs:comment>&quot;A person who assigns numerical scores to evaluate media content.&quot;</rdfs:comment>
         <rdfs:label>Rater</rdfs:label>
     </owl:Class>
@@ -1840,30 +1227,8 @@ search, and recommendation of entertainment content.</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Romance">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Genre"/>
-        <owl:disjointWith>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://id.nlm.nih.gov/mesh/D004324"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Action"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Animation"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Comedy"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Horror"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Thriller"/>
-                </owl:unionOf>
-            </owl:Class>
-        </owl:disjointWith>
         <rdfs:comment>&quot;A genre focusing on love stories and emotional relationships.&quot;</rdfs:comment>
         <rdfs:label>Romance</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#StreamingPlatform -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#StreamingPlatform">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#OnlineRetailer"/>
-        <rdfs:comment>&quot;An online service that delivers media content via internet streaming.&quot;</rdfs:comment>
-        <rdfs:label>StreamingPlatform</rdfs:label>
     </owl:Class>
     
 
@@ -1871,27 +1236,6 @@ search, and recommendation of entertainment content.</rdfs:comment>
     <!-- http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Subtitle -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Subtitle">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#hasSubtitleLanguage"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://schema.org/Language"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.org/name"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#subtitleFormat"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:comment>&quot;A textual representation of dialogue displayed on screen for accessibility.&quot;</rdfs:comment>
         <rdfs:label>Subtitle</rdfs:label>
     </owl:Class>
@@ -1902,30 +1246,8 @@ search, and recommendation of entertainment content.</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Thriller">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Genre"/>
-        <owl:disjointWith>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://id.nlm.nih.gov/mesh/D004324"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Action"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Animation"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Comedy"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Horror"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Romance"/>
-                </owl:unionOf>
-            </owl:Class>
-        </owl:disjointWith>
         <rdfs:comment>&quot;A genre that builds suspense and excitement through tension-driven plots.&quot;</rdfs:comment>
         <rdfs:label>Thriller</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#VideoHostingService -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#VideoHostingService">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#OnlineRetailer"/>
-        <rdfs:comment>&quot;An online platform that hosts and serves video content to users.&quot;</rdfs:comment>
-        <rdfs:label>VideoHostingService</rdfs:label>
     </owl:Class>
     
 
@@ -1934,67 +1256,6 @@ search, and recommendation of entertainment content.</rdfs:comment>
 
     <owl:Class rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Viewer">
         <rdfs:subClassOf rdf:resource="http://schema.org/Person"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#likesMedia"/>
-                <owl:someValuesFrom rdf:resource="http://schema.org/CreativeWork"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#watches"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="http://schema.org/CreativeWork"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#writesReview"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="http://schema.org/Review"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.org/gender"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.org/givenName"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#memberSince"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.org/email"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <owl:disjointWith>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://snomed.info/id/308004006"/>
-                    <rdf:Description rdf:about="http://snomed.info/id/308009001"/>
-                    <rdf:Description rdf:about="http://snomed.info/id/308010006"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Actor"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Editor"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#MusicalArtist"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Rater"/>
-                </owl:unionOf>
-            </owl:Class>
-        </owl:disjointWith>
         <rdfs:comment>&quot;A person who watches and engages with media content.&quot;</rdfs:comment>
         <rdfs:label>Viewer</rdfs:label>
     </owl:Class>
@@ -2034,6 +1295,16 @@ search, and recommendation of entertainment content.</rdfs:comment>
         <schema1:url>https://aryzap.com</schema1:url>
         <untitled-ontology-26:subscriptionPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.99</untitled-ontology-26:subscriptionPrice>
         <untitled-ontology-26:subscriptionType>Basic</untitled-ontology-26:subscriptionType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#ActionGenre -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#ActionGenre">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Genre"/>
+        <untitled-ontology-26:isGenreOf rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#waar"/>
+        <schema1:name>Action</schema1:name>
     </owl:NamedIndividual>
     
 
@@ -2079,6 +1350,17 @@ search, and recommendation of entertainment content.</rdfs:comment>
     
 
 
+    <!-- http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#BilalLashariEditor -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#BilalLashariEditor">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Editor"/>
+        <schema1:gender>Male</schema1:gender>
+        <schema1:givenName>Bilal Lashari Editor</schema1:givenName>
+        <schema1:jobTitle>Senior Film Editor</schema1:jobTitle>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#CBFCPakPG -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#CBFCPakPG">
@@ -2089,11 +1371,12 @@ search, and recommendation of entertainment content.</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#EnglishLang -->
+    <!-- http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#DramaGenre -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#EnglishLang">
-        <rdf:type rdf:resource="http://schema.org/Language"/>
-        <schema1:name>English</schema1:name>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#DramaGenre">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Genre"/>
+        <untitled-ontology-26:isGenreOf rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#waar"/>
+        <schema1:name>Drama</schema1:name>
     </owl:NamedIndividual>
     
 
@@ -2102,7 +1385,6 @@ search, and recommendation of entertainment content.</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#EnglishSubWaar">
         <rdf:type rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Subtitle"/>
-        <untitled-ontology-26:hasSubtitleLanguage rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#EnglishLang"/>
         <untitled-ontology-26:subtitleOf rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#waar"/>
         <schema1:name>English Subtile</schema1:name>
         <untitled-ontology-26:subtitleFormat>SRT</untitled-ontology-26:subtitleFormat>
@@ -2138,7 +1420,6 @@ search, and recommendation of entertainment content.</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#NasirAdeeb">
         <rdf:type rdf:resource="http://snomed.info/id/308004006"/>
-        <untitled-ontology-26:wroteScreenplayFor rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#waar"/>
         <schema1:birthDate>1950-01-01</schema1:birthDate>
         <schema1:gender>Male</schema1:gender>
         <schema1:givenName>Nasir Adeeb</schema1:givenName>
@@ -2182,6 +1463,7 @@ search, and recommendation of entertainment content.</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Production1">
         <rdf:type rdf:resource="http://schema.org/Organization"/>
+        <schema:produces rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#waar"/>
         <schema1:name>MindWorks</schema1:name>
         <schema1:url>https://mindworkproductions.com/</schema1:url>
     </owl:NamedIndividual>
@@ -2192,9 +1474,9 @@ search, and recommendation of entertainment content.</rdfs:comment>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#SahirAliBagga">
         <rdf:type rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#MusicalArtist"/>
-        <untitled-ontology-26:composedMusicFor rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#waar"/>
         <schema1:gender>Male</schema1:gender>
         <schema1:givenName>Sahir Ali Bagga</schema1:givenName>
+        <schema1:jobTitle>Film Score Composer</schema1:jobTitle>
     </owl:NamedIndividual>
     
 
@@ -2222,6 +1504,16 @@ search, and recommendation of entertainment content.</rdfs:comment>
         <schema1:gender>Male</schema1:gender>
         <schema1:givenName>Shaan Shahid</schema1:givenName>
         <schema1:nationality>Pakistani</schema1:nationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#ThrillerGenre -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#ThrillerGenre">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Genre"/>
+        <untitled-ontology-26:isGenreOf rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#waar"/>
+        <schema1:name>Thriller</schema1:name>
     </owl:NamedIndividual>
     
 
@@ -2309,6 +1601,9 @@ search, and recommendation of entertainment content.</rdfs:comment>
         <untitled-ontology-26:belongsToCountry rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Pakistan"/>
         <untitled-ontology-26:distributedBy rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#ARYZap"/>
         <untitled-ontology-26:hasAward rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#NigarAward2014"/>
+        <untitled-ontology-26:hasGenre rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#ActionGenre"/>
+        <untitled-ontology-26:hasGenre rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#DramaGenre"/>
+        <untitled-ontology-26:hasGenre rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#ThrillerGenre"/>
         <untitled-ontology-26:hasRating rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#WaarRating"/>
         <untitled-ontology-26:hasReview rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#WaarReview01"/>
         <untitled-ontology-26:hasReview rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#WaarReview02"/>
@@ -2325,8 +1620,6 @@ search, and recommendation of entertainment content.</rdfs:comment>
         <schema:actor rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#ShaanShahid"/>
         <schema:director rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#BilalLashari"/>
         <schema:hasCertification rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#CBFCPakPG"/>
-        <schema:inLanguage rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#PashtoLang"/>
-        <schema:inLanguage rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#UrduLang"/>
         <schema1:awards>Nigar Award Best Film 2014</schema1:awards>
         <schema1:description>A Pakistani counter-terrorism action film following Major Mujtaba against terrorist outfit.</schema1:description>
         <schema1:duration>&quot;PT148M&quot; (148 minutes)</schema1:duration>
@@ -2346,13 +1639,58 @@ search, and recommendation of entertainment content.</rdfs:comment>
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    <rdf:Description rdf:about="http://schema.org/produces">
+        <rdfs:comment>&quot;Relates a production company to the creative 
+                    work it has produced.&quot;</rdfs:comment>
+        <rdfs:label>produces</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#StreamingPlatform">
+        <rdfs:comment>&quot;An online service that delivers media content via internet streaming.&quot;</rdfs:comment>
+        <rdfs:label>StreamingPlatform</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#VideoHostingService">
+        <rdfs:comment>&quot;An online platform that hosts and serves video content to users.&quot;</rdfs:comment>
+        <rdfs:label>VideoHostingService</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#certificationOf">
+        <rdfs:comment>&quot;Relates a certification to the creative work it has been assigned to.&quot;</rdfs:comment>
+        <rdfs:label>certificationOf</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#composedMusicFor">
+        <rdfs:comment>&quot;Relates a musical artist to the work they composed music for.&quot;</rdfs:comment>
+        <rdfs:label>composedMusicFor</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#hasMusicBy">
+        <rdfs:comment>&quot;Relates a creative work to the musical artist who composed its music.&quot;</rdfs:comment>
+        <rdfs:label>hasMusicBy</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#hasScreenplayBy">
+        <rdfs:comment>&quot;Relates a creative work to the writer who wrote its screenplay.&quot;</rdfs:comment>
+        <rdfs:label>hasScreenplayBy</rdfs:label>
+    </rdf:Description>
     <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#inLanguageOf">
         <rdfs:comment>&quot;Relates a language to the media work or platform it is used in.&quot;</rdfs:comment>
         <rdfs:label>inLanguageOf</rdfs:label>
     </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#isCountryOf">
+        <rdfs:comment>&quot;Relates a country to the creative work that originates from it.&quot;</rdfs:comment>
+        <rdfs:label>isCountryOf</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#isLanguageOf">
+        <rdfs:comment>&quot;Relates a language to the creative work it is used in.&quot;</rdfs:comment>
+        <rdfs:label>isLanguageOf</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#isLanguageOfSubtitle">
+        <rdfs:comment>&quot;Relates a language to the subtitle it is written in.&quot;</rdfs:comment>
+        <rdfs:label>isLanguageOfSubtitle</rdfs:label>
+    </rdf:Description>
     <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#servedBy">
         <rdfs:comment>&quot;Relates a country to the online retailer that serves it.&quot;</rdfs:comment>
         <rdfs:label>servedBy</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#wroteScreenplayFor">
+        <rdfs:comment>&quot;Relates a writer to the media work they wrote the screenplay for.&quot;</rdfs:comment>
+        <rdfs:label>wroteScreenplayFor</rdfs:label>
     </rdf:Description>
 </rdf:RDF>
 
