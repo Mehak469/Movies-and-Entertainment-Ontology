@@ -182,9 +182,6 @@ search, and recommendation of entertainment content.</Literal>
         <ObjectProperty IRI="#hasSubtitle"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasSubtitleLanguage"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#hosts"/>
     </Declaration>
     <Declaration>
@@ -228,9 +225,6 @@ search, and recommendation of entertainment content.</Literal>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#writtenByViewer"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="http://www.w3.org/2006/vcard/ns#hasLanguage"/>
     </Declaration>
     <Declaration>
         <ObjectProperty abbreviatedIRI="schema:actor"/>
@@ -1024,11 +1018,6 @@ search, and recommendation of entertainment content.</Literal>
         <NamedIndividual IRI="#SaraMalik"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="http://www.w3.org/2006/vcard/ns#hasLanguage"/>
-        <NamedIndividual IRI="#waar"/>
-        <NamedIndividual IRI="#UrduLang"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
         <ObjectProperty abbreviatedIRI="schema:actor"/>
         <NamedIndividual IRI="#waar"/>
         <NamedIndividual IRI="#AyeshaKhan"/>
@@ -1581,10 +1570,6 @@ search, and recommendation of entertainment content.</Literal>
         <Class IRI="http://schema.org/CreativeWork"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasSubtitleLanguage"/>
-        <Class IRI="#Subtitle"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hosts"/>
         <Class IRI="#OnlineRetailer"/>
     </ObjectPropertyDomain>
@@ -1645,10 +1630,6 @@ search, and recommendation of entertainment content.</Literal>
         <Class IRI="http://schema.org/Review"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="http://www.w3.org/2006/vcard/ns#hasLanguage"/>
-        <Class IRI="http://schema.org/CreativeWork"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI="schema:actor"/>
         <Class IRI="http://schema.org/CreativeWork"/>
     </ObjectPropertyDomain>
@@ -1666,7 +1647,11 @@ search, and recommendation of entertainment content.</Literal>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI="schema:inLanguage"/>
-        <Class IRI="#OnlineRetailer"/>
+        <ObjectUnionOf>
+            <Class IRI="http://schema.org/CreativeWork"/>
+            <Class IRI="#OnlineRetailer"/>
+            <Class IRI="#Subtitle"/>
+        </ObjectUnionOf>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty abbreviatedIRI="schema:produces"/>
@@ -1749,10 +1734,6 @@ search, and recommendation of entertainment content.</Literal>
         <Class IRI="#Subtitle"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasSubtitleLanguage"/>
-        <Class IRI="http://schema.org/Language"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
         <ObjectProperty IRI="#hosts"/>
         <Class IRI="http://schema.org/CreativeWork"/>
     </ObjectPropertyRange>
@@ -1811,10 +1792,6 @@ search, and recommendation of entertainment content.</Literal>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#writtenByViewer"/>
         <Class IRI="#Viewer"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="http://www.w3.org/2006/vcard/ns#hasLanguage"/>
-        <Class IRI="http://schema.org/Language"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty abbreviatedIRI="schema:actor"/>
@@ -2940,16 +2917,6 @@ search, and recommendation of entertainment content.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#hasSubtitleLanguage</IRI>
-        <Literal>&quot;Relates a subtitle to the language it is written in.&quot;</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#hasSubtitleLanguage</IRI>
-        <Literal>hasSubtitleLanguage</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#hosts</IRI>
         <Literal>&quot;Relates an online platform to the media content it hosts.&quot;</Literal>
     </AnnotationAssertion>
@@ -3197,17 +3164,6 @@ search, and recommendation of entertainment content.</Literal>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#wroteScreenplayFor</IRI>
         <Literal>wroteScreenplayFor</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>http://www.w3.org/2006/vcard/ns#hasLanguage</IRI>
-        <Literal>&quot;Relates a creative work to the language 
-                    in which it is presented.&quot;</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>http://www.w3.org/2006/vcard/ns#hasLanguage</IRI>
-        <Literal>hasLanguage</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
