@@ -483,6 +483,183 @@ search, and recommendation of entertainment content.</Literal>
         <Class IRI="#Viewer"/>
         <Class IRI="http://schema.org/Person"/>
     </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="http://id.nlm.nih.gov/mesh/D004324"/>
+        <ObjectUnionOf>
+            <Class IRI="#Action"/>
+            <Class IRI="#Animation"/>
+            <Class IRI="#Comedy"/>
+            <Class IRI="#Horror"/>
+            <Class IRI="#Romance"/>
+            <Class IRI="#Thriller"/>
+        </ObjectUnionOf>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://schema.org/Movie"/>
+        <Class IRI="http://schema.org/TVSeries"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://snomed.info/id/308004006"/>
+        <ObjectUnionOf>
+            <Class IRI="http://snomed.info/id/308009001"/>
+            <Class IRI="http://snomed.info/id/308010006"/>
+            <Class IRI="#Actor"/>
+            <Class IRI="#Editor"/>
+            <Class IRI="#MusicalArtist"/>
+            <Class IRI="#Rater"/>
+            <Class IRI="#Viewer"/>
+        </ObjectUnionOf>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://snomed.info/id/308009001"/>
+        <ObjectUnionOf>
+            <Class IRI="http://snomed.info/id/308004006"/>
+            <Class IRI="http://snomed.info/id/308010006"/>
+            <Class IRI="#Actor"/>
+            <Class IRI="#Editor"/>
+            <Class IRI="#MusicalArtist"/>
+            <Class IRI="#Rater"/>
+            <Class IRI="#Viewer"/>
+        </ObjectUnionOf>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://snomed.info/id/308010006"/>
+        <ObjectUnionOf>
+            <Class IRI="http://snomed.info/id/308004006"/>
+            <Class IRI="http://snomed.info/id/308009001"/>
+            <Class IRI="#Actor"/>
+            <Class IRI="#Editor"/>
+            <Class IRI="#MusicalArtist"/>
+            <Class IRI="#Rater"/>
+            <Class IRI="#Viewer"/>
+        </ObjectUnionOf>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Action"/>
+        <ObjectUnionOf>
+            <Class IRI="http://id.nlm.nih.gov/mesh/D004324"/>
+            <Class IRI="#Animation"/>
+            <Class IRI="#Comedy"/>
+            <Class IRI="#Horror"/>
+            <Class IRI="#Romance"/>
+            <Class IRI="#Thriller"/>
+        </ObjectUnionOf>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Actor"/>
+        <ObjectUnionOf>
+            <Class IRI="http://snomed.info/id/308004006"/>
+            <Class IRI="http://snomed.info/id/308009001"/>
+            <Class IRI="http://snomed.info/id/308010006"/>
+            <Class IRI="#Editor"/>
+            <Class IRI="#MusicalArtist"/>
+            <Class IRI="#Rater"/>
+            <Class IRI="#Viewer"/>
+        </ObjectUnionOf>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Animation"/>
+        <ObjectUnionOf>
+            <Class IRI="http://id.nlm.nih.gov/mesh/D004324"/>
+            <Class IRI="#Action"/>
+            <Class IRI="#Comedy"/>
+            <Class IRI="#Horror"/>
+            <Class IRI="#Romance"/>
+            <Class IRI="#Thriller"/>
+        </ObjectUnionOf>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Comedy"/>
+        <ObjectUnionOf>
+            <Class IRI="http://id.nlm.nih.gov/mesh/D004324"/>
+            <Class IRI="#Action"/>
+            <Class IRI="#Animation"/>
+            <Class IRI="#Horror"/>
+            <Class IRI="#Romance"/>
+            <Class IRI="#Thriller"/>
+        </ObjectUnionOf>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Editor"/>
+        <ObjectUnionOf>
+            <Class IRI="http://snomed.info/id/308004006"/>
+            <Class IRI="http://snomed.info/id/308009001"/>
+            <Class IRI="http://snomed.info/id/308010006"/>
+            <Class IRI="#Actor"/>
+            <Class IRI="#MusicalArtist"/>
+            <Class IRI="#Rater"/>
+            <Class IRI="#Viewer"/>
+        </ObjectUnionOf>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Horror"/>
+        <ObjectUnionOf>
+            <Class IRI="http://id.nlm.nih.gov/mesh/D004324"/>
+            <Class IRI="#Action"/>
+            <Class IRI="#Animation"/>
+            <Class IRI="#Comedy"/>
+            <Class IRI="#Romance"/>
+            <Class IRI="#Thriller"/>
+        </ObjectUnionOf>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#MusicalArtist"/>
+        <ObjectUnionOf>
+            <Class IRI="http://snomed.info/id/308004006"/>
+            <Class IRI="http://snomed.info/id/308009001"/>
+            <Class IRI="http://snomed.info/id/308010006"/>
+            <Class IRI="#Actor"/>
+            <Class IRI="#Editor"/>
+            <Class IRI="#Rater"/>
+            <Class IRI="#Viewer"/>
+        </ObjectUnionOf>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Rater"/>
+        <ObjectUnionOf>
+            <Class IRI="http://snomed.info/id/308004006"/>
+            <Class IRI="http://snomed.info/id/308009001"/>
+            <Class IRI="http://snomed.info/id/308010006"/>
+            <Class IRI="#Actor"/>
+            <Class IRI="#Editor"/>
+            <Class IRI="#MusicalArtist"/>
+            <Class IRI="#Viewer"/>
+        </ObjectUnionOf>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Romance"/>
+        <ObjectUnionOf>
+            <Class IRI="http://id.nlm.nih.gov/mesh/D004324"/>
+            <Class IRI="#Action"/>
+            <Class IRI="#Animation"/>
+            <Class IRI="#Comedy"/>
+            <Class IRI="#Horror"/>
+            <Class IRI="#Thriller"/>
+        </ObjectUnionOf>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Thriller"/>
+        <ObjectUnionOf>
+            <Class IRI="http://id.nlm.nih.gov/mesh/D004324"/>
+            <Class IRI="#Action"/>
+            <Class IRI="#Animation"/>
+            <Class IRI="#Comedy"/>
+            <Class IRI="#Horror"/>
+            <Class IRI="#Romance"/>
+        </ObjectUnionOf>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Viewer"/>
+        <ObjectUnionOf>
+            <Class IRI="http://snomed.info/id/308004006"/>
+            <Class IRI="http://snomed.info/id/308009001"/>
+            <Class IRI="http://snomed.info/id/308010006"/>
+            <Class IRI="#Actor"/>
+            <Class IRI="#Editor"/>
+            <Class IRI="#MusicalArtist"/>
+            <Class IRI="#Rater"/>
+        </ObjectUnionOf>
+    </DisjointClasses>
     <ClassAssertion>
         <Class IRI="#OnlineRetailer"/>
         <NamedIndividual IRI="#ARYZap"/>
@@ -1700,10 +1877,7 @@ search, and recommendation of entertainment content.</Literal>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="http://schema.org/email"/>
-        <ObjectUnionOf>
-            <Class IRI="#Rater"/>
-            <Class IRI="#Viewer"/>
-        </ObjectUnionOf>
+        <Class IRI="http://schema.org/Person"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="http://schema.org/episodeNumber"/>
@@ -3086,6 +3260,16 @@ search, and recommendation of entertainment content.</Literal>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <AbbreviatedIRI>schema:inLanguage</AbbreviatedIRI>
         <Literal>offersLanguage</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>schema:produces</AbbreviatedIRI>
+        <Literal>&quot;Relates a production company to the creative work it has produced.&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>schema:produces</AbbreviatedIRI>
+        <Literal>produces</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
