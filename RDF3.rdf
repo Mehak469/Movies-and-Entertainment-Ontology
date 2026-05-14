@@ -102,17 +102,6 @@ search, and recommendation of entertainment content.</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#belongsToCountry -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#belongsToCountry">
-        <rdfs:domain rdf:resource="http://schema.org/CreativeWork"/>
-        <rdfs:range rdf:resource="http://dbpedia.org/ontology/Country"/>
-        <rdfs:comment>&quot;Relates a creative work to its country of origin.&quot;</rdfs:comment>
-        <rdfs:label>belongsToCountry</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#direct -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#direct">
@@ -449,7 +438,14 @@ search, and recommendation of entertainment content.</rdfs:comment>
     <!-- https://schema.org/areaServed -->
 
     <owl:ObjectProperty rdf:about="https://schema.org/areaServed">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#OnlineRetailer"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.org/CreativeWork"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#OnlineRetailer"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://dbpedia.org/ontology/Country"/>
         <rdfs:comment>&quot;Relates an online retailer to the country where it provides its services.&quot;</rdfs:comment>
         <rdfs:label>availableInCountry</rdfs:label>
@@ -1765,7 +1761,6 @@ search, and recommendation of entertainment content.</rdfs:comment>
         <obo:RO_0003001 rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Production1"/>
         <untitled-ontology-26:availableOn rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#ARYZap"/>
         <untitled-ontology-26:availableOn rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#YouTubePK"/>
-        <untitled-ontology-26:belongsToCountry rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#Pakistan"/>
         <untitled-ontology-26:distributedBy rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#ARYZap"/>
         <untitled-ontology-26:hasAward rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#NigarAward2014"/>
         <untitled-ontology-26:hasGenre rdf:resource="http://www.semanticweb.org/ladla&apos;s_elliz/ontologies/2026/3/untitled-ontology-26#ActionGenre"/>
